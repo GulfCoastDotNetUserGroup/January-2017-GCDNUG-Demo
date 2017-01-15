@@ -1,10 +1,12 @@
 ﻿using System;
-using System.Reflection;
 using System.Text;
-using January2017GCDNUG;
 using January_2017_GCDNUG_Demo.Helpers;
 using January_2017_GCDNUG_Demo.Interfaces;
+using January_2017_GCDNUG_Demo.Misc;
+
 // Static usings
+using static System.Reflection.MethodBase;
+
 
 namespace January_2017_GCDNUG_Demo.Demos
 {
@@ -43,7 +45,7 @@ namespace January_2017_GCDNUG_Demo.Demos
         {
             var sb = new StringBuilder();
 
-            sb.Append($"{MethodBase.GetCurrentMethod().MethodSignature()}{Environment.NewLine}");
+            sb.Append($"{GetCurrentMethod().MethodSignature()}{Environment.NewLine}");
             sb.Append($"Nmae = {User.Name}{Environment.NewLine}");
             sb.Append($"UsergUid = {User.UserGuid}{Environment.NewLine}");
             sb.Append($"Speceis = {User.Species}");
@@ -55,7 +57,7 @@ namespace January_2017_GCDNUG_Demo.Demos
         {
             var sb = new StringBuilder();
 
-            sb.Append($"{MethodBase.GetCurrentMethod().MethodSignature()}{Environment.NewLine}");
+            sb.Append($"{GetCurrentMethod().MethodSignature()}{Environment.NewLine}");
             sb.Append($"{nameof(User.Name)} = {User.Name}{Environment.NewLine}");
             sb.Append($"{nameof(User.UserGuid)} = {User.UserGuid}{Environment.NewLine}");
             sb.Append($"{nameof(User.Species)} = {User.Species}");

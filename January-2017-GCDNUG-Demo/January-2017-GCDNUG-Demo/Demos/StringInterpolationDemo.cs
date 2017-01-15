@@ -1,9 +1,9 @@
-﻿using System.Reflection;
-using System.Text;
-using January2017GCDNUG;
+﻿using System.Text;
 using January_2017_GCDNUG_Demo.Helpers;
 using January_2017_GCDNUG_Demo.Interfaces;
+using January_2017_GCDNUG_Demo.Misc;
 // Static using
+using static System.Reflection.MethodBase;
 
 namespace January_2017_GCDNUG_Demo.Demos
 {
@@ -45,19 +45,19 @@ namespace January_2017_GCDNUG_Demo.Demos
         // With '+' operator
         private string GreetingWithConcatination()
         {
-            return DemoConstants.Hello + Name + "!  "  + MethodBase.GetCurrentMethod().MethodSignature();
+            return DemoConstants.Hello + Name + "!  "  + GetCurrentMethod().MethodSignature();
         }
 
         // With string.Format()
         private string GreetingWithStringFormat()
         {
-            return string.Format("{0}{1}!  {2}", DemoConstants.Hello,  Name, MethodBase.GetCurrentMethod().MethodSignature());
+            return string.Format("{0}{1}!  {2}", DemoConstants.Hello,  Name, GetCurrentMethod().MethodSignature());
         }
 
         // With string interpolation
         private string GreetingWithStringInterpolation()
         {
-            return $"{DemoConstants.Hello}{Name}!  {MethodBase.GetCurrentMethod().MethodSignature()}";
+            return $"{DemoConstants.Hello}{Name}!  {GetCurrentMethod().MethodSignature()}";
         }
 
         #endregion Private Methods

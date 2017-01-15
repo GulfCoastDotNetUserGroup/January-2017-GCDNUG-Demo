@@ -45,6 +45,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Demos\ExceptionFiltersDemo.cs" />
     <Compile Include="Demos\ExpressionBodiedMembersDemo.cs" />
     <Compile Include="Demos\NameOfDemo.cs" />
     <Compile Include="Demos\NullPropagationOperatorDemo.cs" />
@@ -55,9 +56,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\ExceptionHelper.cs" />
     <Compile Include="Helpers\MethodInfoHelper.cs" />
     <Compile Include="Interfaces\IMessageBuilder.cs" />
     <Compile Include="Misc\DemoConstants.cs" />
+    <Compile Include="Misc\DotNetUserGroupException.cs" />
+    <Compile Include="Misc\Enums.cs" />
     <Compile Include="Misc\User.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

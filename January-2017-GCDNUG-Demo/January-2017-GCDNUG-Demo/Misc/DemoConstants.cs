@@ -1,4 +1,4 @@
-﻿namespace January2017GCDNUG
+﻿namespace January_2017_GCDNUG_Demo.Misc
 {
     public class DemoConstants
     {

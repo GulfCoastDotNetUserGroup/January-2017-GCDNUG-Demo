@@ -1,10 +1,11 @@
 ﻿using System;
-using System.Reflection;
 using System.Text;
-using January2017GCDNUG;
 using January_2017_GCDNUG_Demo.Helpers;
 using January_2017_GCDNUG_Demo.Interfaces;
+using January_2017_GCDNUG_Demo.Misc;
+
 // Static usings
+using static System.Reflection.MethodBase;
 
 namespace January_2017_GCDNUG_Demo.Demos
 {
@@ -58,15 +59,15 @@ namespace January_2017_GCDNUG_Demo.Demos
         {
             if (user == null || user.Name == null)
             {
-                return $"{DemoConstants.Hello}{NullUserOrNameMessage}  {MethodBase.GetCurrentMethod().MethodSignature()}";
+                return $"{DemoConstants.Hello}{NullUserOrNameMessage}  {GetCurrentMethod().MethodSignature()}";
             }
-            return $"{DemoConstants.Hello}{user.Name}  {MethodBase.GetCurrentMethod().MethodSignature()}";
+            return $"{DemoConstants.Hello}{user.Name}  {GetCurrentMethod().MethodSignature()}";
         }
 
         // NEW HOTNESS
         private string GreetingWithNullPropagationOperator(User user)
         {
-            return $"{DemoConstants.Hello}{user?.Name ?? NullUserOrNameMessage}  {MethodBase.GetCurrentMethod().MethodSignature()}";
+            return $"{DemoConstants.Hello}{user?.Name ?? NullUserOrNameMessage}  {GetCurrentMethod().MethodSignature()}";
         }
 
         #endregion Private Methods

@@ -38,6 +38,9 @@ namespace January_2017_GCDNUG_Demo
                 case "nameofRadioButton":
                     messageBuilders.Add(new NameOfDemo(nameTextBox.Text));
                     break;
+                case "exceptionFiltersRadioButton":
+                    messageBuilders.Add(new ExceptionFiltersDemo(nameTextBox.Text));
+                    break;
             }
 
             DisplayMessage(messageBuilders);

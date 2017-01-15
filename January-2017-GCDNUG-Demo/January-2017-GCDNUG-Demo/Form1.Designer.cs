@@ -39,6 +39,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.nullConditionalRadioButton = new System.Windows.Forms.RadioButton();
             this.stringInterpolationRadioButton = new System.Windows.Forms.RadioButton();
+            this.exceptionFiltersRadioButton = new System.Windows.Forms.RadioButton();
             this.demosGroupBox.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -80,6 +81,7 @@
             // 
             // demosGroupBox
             // 
+            this.demosGroupBox.Controls.Add(this.exceptionFiltersRadioButton);
             this.demosGroupBox.Controls.Add(this.nameofRadioButton);
             this.demosGroupBox.Controls.Add(this.ExpressionBodiedMembersRadioButton);
             this.demosGroupBox.Controls.Add(this.label1);
@@ -150,6 +152,18 @@
             this.stringInterpolationRadioButton.UseVisualStyleBackColor = true;
             this.stringInterpolationRadioButton.Click += new System.EventHandler(this.Stuff_Changed);
             // 
+            // exceptionFiltersRadioButton
+            // 
+            this.exceptionFiltersRadioButton.AutoSize = true;
+            this.exceptionFiltersRadioButton.Location = new System.Drawing.Point(10, 132);
+            this.exceptionFiltersRadioButton.Name = "exceptionFiltersRadioButton";
+            this.exceptionFiltersRadioButton.Size = new System.Drawing.Size(102, 17);
+            this.exceptionFiltersRadioButton.TabIndex = 5;
+            this.exceptionFiltersRadioButton.TabStop = true;
+            this.exceptionFiltersRadioButton.Text = "Exception Filters";
+            this.exceptionFiltersRadioButton.UseVisualStyleBackColor = true;
+            this.exceptionFiltersRadioButton.Click += new System.EventHandler(this.Stuff_Changed);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -182,6 +196,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.RadioButton ExpressionBodiedMembersRadioButton;
         private System.Windows.Forms.RadioButton nameofRadioButton;
+        private System.Windows.Forms.RadioButton exceptionFiltersRadioButton;
     }
 }
 

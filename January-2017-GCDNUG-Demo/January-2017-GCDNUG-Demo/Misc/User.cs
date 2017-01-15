@@ -1,9 +1,6 @@
 ﻿using System;
-using System.Net.Http;
-using System.Threading;
-using System.Threading.Tasks;
 
-namespace January2017GCDNUG
+namespace January_2017_GCDNUG_Demo.Misc
 {
     public class User
     {
