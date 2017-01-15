@@ -15,7 +15,7 @@ namespace January_2017_GCDNUG_Demo.Demos
     /// If you have a property or method that contains a single line of code, you can use the “=>” operator 
     /// to express it instead of defining the body using curly braces.
     /// </summary>
-    class ExpressionBodiedMembersDemo : IMessageBuilder
+    public class ExpressionBodiedMembersDemo : IMessageBuilder
     {
         #region Properties
 

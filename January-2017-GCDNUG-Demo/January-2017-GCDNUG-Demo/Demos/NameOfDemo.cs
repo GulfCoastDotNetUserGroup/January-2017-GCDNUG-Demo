@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Text;
+using System.Collections.Generic;
 using January_2017_GCDNUG_Demo.Helpers;
 using January_2017_GCDNUG_Demo.Interfaces;
 using January_2017_GCDNUG_Demo.Misc;
@@ -7,10 +8,9 @@ using January_2017_GCDNUG_Demo.Misc;
 // Static usings
 using static System.Reflection.MethodBase;
 
-
 namespace January_2017_GCDNUG_Demo.Demos
 {
-    class NameOfDemo : IMessageBuilder
+    public class NameOfDemo : IMessageBuilder
     {
         #region Properties
 
@@ -34,7 +34,7 @@ namespace January_2017_GCDNUG_Demo.Demos
 
         public string GetMessage()
         {
-            return $"{GetUserDetailsWithLiteralStrings()}{DemoConstants.DoubleSpace}{GetUserDetailsWithNameOf()}";
+            return $"{GetUserDetailsWithLiteralStrings()}{Environment.NewLine}{GetUserDetailsWithNameOf()}";
         }
 
         #endregion Public Methods
@@ -43,28 +43,43 @@ namespace January_2017_GCDNUG_Demo.Demos
 
         private string GetUserDetailsWithLiteralStrings()
         {
-            var sb = new StringBuilder();
+            // Old dictionary initializer
+            var userPropertyDictionary = new Dictionary<string, string>()
+            {
+                { "Nmae", User.Name },
+                { "usergUid", User.UserGuid.ToString() },
+                { "Speceis", User.Species }
+            };
 
-            sb.Append($"{GetCurrentMethod().MethodSignature()}{Environment.NewLine}");
-            sb.Append($"Nmae = {User.Name}{Environment.NewLine}");
-            sb.Append($"UsergUid = {User.UserGuid}{Environment.NewLine}");
-            sb.Append($"Speceis = {User.Species}");
-
-            return sb.ToString();
+            return $"{GetCurrentMethod().MethodSignature()}{Environment.NewLine}{GetMessageFromDictionary(userPropertyDictionary)}";
         }
 
         private string GetUserDetailsWithNameOf()
         {
+            // New dictionary initializer
+            var userPropertyDictionary = new Dictionary<string, string>()
+            {
+                // nameof instead of literal strings
+                [nameof(User.Name)] = User.Name,
+                [nameof(User.UserGuid)] = User.UserGuid.ToString(),
+                [nameof(User.Species)] = User.Species
+            };
+
+            return $"{GetCurrentMethod().MethodSignature()}{Environment.NewLine}{GetMessageFromDictionary(userPropertyDictionary)}";
+        }
+
+        private string GetMessageFromDictionary(Dictionary<string, string> dict)
+        {
             var sb = new StringBuilder();
 
-            sb.Append($"{GetCurrentMethod().MethodSignature()}{Environment.NewLine}");
-            sb.Append($"{nameof(User.Name)} = {User.Name}{Environment.NewLine}");
-            sb.Append($"{nameof(User.UserGuid)} = {User.UserGuid}{Environment.NewLine}");
-            sb.Append($"{nameof(User.Species)} = {User.Species}");
+            foreach (var pair in dict)
+            {
+                sb.Append($"{pair.Key} = {pair.Value}{Environment.NewLine}");
+            }
 
             return sb.ToString();
         }
 
-        #endregion Private Methods
+        #endregion Private Methods 
     }
 }

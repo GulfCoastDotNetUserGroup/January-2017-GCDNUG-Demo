@@ -41,6 +41,10 @@ namespace January_2017_GCDNUG_Demo
                 case "exceptionFiltersRadioButton":
                     messageBuilders.Add(new ExceptionFiltersDemo(nameTextBox.Text));
                     break;
+                case "awaitRadioButton":
+                    bool useAwait = nameTextBox.Text.ToLower() == "yes";
+                    messageTextBox.Text = new AwaitInCatchBlockDemo(useAwait).GetMessage();
+                    return;
             }
 
             DisplayMessage(messageBuilders);

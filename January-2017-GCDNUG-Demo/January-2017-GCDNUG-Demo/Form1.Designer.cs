@@ -40,7 +40,14 @@
             this.nullConditionalRadioButton = new System.Windows.Forms.RadioButton();
             this.stringInterpolationRadioButton = new System.Windows.Forms.RadioButton();
             this.exceptionFiltersRadioButton = new System.Windows.Forms.RadioButton();
+            this.syncronousLabel = new System.Windows.Forms.Label();
+            this.awaitRadioButton = new System.Windows.Forms.RadioButton();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.radioButton3 = new System.Windows.Forms.RadioButton();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.demosGroupBox.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // nameLabel
@@ -81,6 +88,7 @@
             // 
             // demosGroupBox
             // 
+            this.demosGroupBox.Controls.Add(this.awaitRadioButton);
             this.demosGroupBox.Controls.Add(this.exceptionFiltersRadioButton);
             this.demosGroupBox.Controls.Add(this.nameofRadioButton);
             this.demosGroupBox.Controls.Add(this.ExpressionBodiedMembersRadioButton);
@@ -99,10 +107,10 @@
             this.nameofRadioButton.AutoSize = true;
             this.nameofRadioButton.Location = new System.Drawing.Point(10, 108);
             this.nameofRadioButton.Name = "nameofRadioButton";
-            this.nameofRadioButton.Size = new System.Drawing.Size(60, 17);
+            this.nameofRadioButton.Size = new System.Drawing.Size(178, 17);
             this.nameofRadioButton.TabIndex = 4;
             this.nameofRadioButton.TabStop = true;
-            this.nameofRadioButton.Text = "nameof";
+            this.nameofRadioButton.Text = "\'nameof\' and Dictionary Initializer";
             this.nameofRadioButton.UseVisualStyleBackColor = true;
             this.nameofRadioButton.Click += new System.EventHandler(this.Stuff_Changed);
             // 
@@ -164,11 +172,79 @@
             this.exceptionFiltersRadioButton.UseVisualStyleBackColor = true;
             this.exceptionFiltersRadioButton.Click += new System.EventHandler(this.Stuff_Changed);
             // 
+            // syncronousLabel
+            // 
+            this.syncronousLabel.AutoSize = true;
+            this.syncronousLabel.Location = new System.Drawing.Point(9, 88);
+            this.syncronousLabel.Name = "syncronousLabel";
+            this.syncronousLabel.Size = new System.Drawing.Size(63, 13);
+            this.syncronousLabel.TabIndex = 7;
+            this.syncronousLabel.Text = "Syncronous";
+            // 
+            // awaitRadioButton
+            // 
+            this.awaitRadioButton.AutoSize = true;
+            this.awaitRadioButton.Location = new System.Drawing.Point(10, 156);
+            this.awaitRadioButton.Name = "awaitRadioButton";
+            this.awaitRadioButton.Size = new System.Drawing.Size(126, 17);
+            this.awaitRadioButton.TabIndex = 6;
+            this.awaitRadioButton.TabStop = true;
+            this.awaitRadioButton.Text = "\'await\' in Catch Block";
+            this.awaitRadioButton.UseVisualStyleBackColor = true;
+            this.awaitRadioButton.Click += new System.EventHandler(this.Stuff_Changed);
+            // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Location = new System.Drawing.Point(7, 29);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(31, 17);
+            this.radioButton1.TabIndex = 0;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "1";
+            this.radioButton1.UseVisualStyleBackColor = true;
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Location = new System.Drawing.Point(44, 29);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(31, 17);
+            this.radioButton2.TabIndex = 1;
+            this.radioButton2.TabStop = true;
+            this.radioButton2.Text = "2";
+            this.radioButton2.UseVisualStyleBackColor = true;
+            // 
+            // radioButton3
+            // 
+            this.radioButton3.AutoSize = true;
+            this.radioButton3.Location = new System.Drawing.Point(81, 29);
+            this.radioButton3.Name = "radioButton3";
+            this.radioButton3.Size = new System.Drawing.Size(31, 17);
+            this.radioButton3.TabIndex = 2;
+            this.radioButton3.TabStop = true;
+            this.radioButton3.Text = "3";
+            this.radioButton3.UseVisualStyleBackColor = true;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.radioButton3);
+            this.groupBox1.Controls.Add(this.radioButton2);
+            this.groupBox1.Controls.Add(this.radioButton1);
+            this.groupBox1.Location = new System.Drawing.Point(12, 294);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(119, 52);
+            this.groupBox1.TabIndex = 8;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "UI Thread Tester";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1013, 301);
+            this.ClientSize = new System.Drawing.Size(1013, 358);
+            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.syncronousLabel);
             this.Controls.Add(this.demosGroupBox);
             this.Controls.Add(this.messageTextBox);
             this.Controls.Add(this.getGreetingButton);
@@ -179,6 +255,8 @@
             this.Text = "January 2017 Gulf Coast .NET User Group Demo";
             this.demosGroupBox.ResumeLayout(false);
             this.demosGroupBox.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -197,6 +275,12 @@
         private System.Windows.Forms.RadioButton ExpressionBodiedMembersRadioButton;
         private System.Windows.Forms.RadioButton nameofRadioButton;
         private System.Windows.Forms.RadioButton exceptionFiltersRadioButton;
+        private System.Windows.Forms.Label syncronousLabel;
+        private System.Windows.Forms.RadioButton awaitRadioButton;
+        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.RadioButton radioButton3;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }
 

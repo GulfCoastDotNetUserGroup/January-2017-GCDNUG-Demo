@@ -1,12 +1,11 @@
-﻿using System.Text;
+﻿using System;
+using System.Text;
 using January_2017_GCDNUG_Demo.Interfaces;
 using January_2017_GCDNUG_Demo.Misc;
 using January_2017_GCDNUG_Demo.Helpers;
 
-using static January_2017_GCDNUG_Demo.Misc.Enums;
 using static January_2017_GCDNUG_Demo.Helpers.ExceptionHelper;
 using static System.Reflection.MethodBase;
-
 
 namespace January_2017_GCDNUG_Demo.Demos
 {
@@ -35,13 +34,17 @@ namespace January_2017_GCDNUG_Demo.Demos
         {
             var sb = new StringBuilder();
 
+            sb.Append($"WITHOUT EXCEPTION FILTERS{DemoConstants.DoubleSpace}");
+
             ProcessMessageWithoutExceptionFilters(new User(Name));
             sb.Append(Message);
             sb.Append(DemoConstants.DoubleSpace);
 
             ProcessMessageWithoutExceptionFilters(null);
             sb.Append(Message);
-            sb.Append(DemoConstants.DoubleSpace);
+            sb.Append(DemoConstants.DoubleSpace + Environment.NewLine);
+
+            sb.Append($"WITH EXCEPTION FILTERS{DemoConstants.DoubleSpace}");
 
             ProcessMessageWithExceptionFilters(new User(Name));
             sb.Append(Message);
@@ -82,26 +85,30 @@ namespace January_2017_GCDNUG_Demo.Demos
         {
             try
             {
-                if (user == null) throw new DotNetUserGroupException { PanicLevel = ExceptionPanicLevelEnum.CurlIntoFetalPositionAndCry };
-                if (string.IsNullOrEmpty(user.Name)) throw new DotNetUserGroupException { PanicLevel = ExceptionPanicLevelEnum.WeMightHaveAProblemHere };
-                if (user.Name.Split(' ').Length < 2) throw new DotNetUserGroupException { PanicLevel = ExceptionPanicLevelEnum.NoBigDeal };
+                if (user == null) throw new DotNetUserGroupException();
+                if (string.IsNullOrEmpty(user.Name)) throw new DotNetUserGroupException();
+                if (user.Name.Split(' ').Length < 2) throw new DotNetUserGroupException();
 
                 Message = $"{DemoConstants.Hello}{user.Name}";
             }
-            catch (DotNetUserGroupException e) when (e.PanicLevel == ExceptionPanicLevelEnum.NoBigDeal)
+            catch (DotNetUserGroupException e) when (user == null)
             {
-                WriteToMoreImportantThingsToWorryAboutLog(e, "User did not provide full name");
-                Message = "I'm sorry but we cannot process your message correctly if you don't provide your full name.";
+                WriteToImmediateAttentionLog(e, "Something terrible has happened! This application is doomed!");
+                Message = DemoConstants.OopsMessage;               
             }
-            catch (DotNetUserGroupException e) when (e.PanicLevel == ExceptionPanicLevelEnum.WeMightHaveAProblemHere)
+            catch (DotNetUserGroupException e) when (string.IsNullOrEmpty(user.Name))
             {
                 WriteToTicketLog(e, "User did not provide a name");
                 Message = "Please enter a name if you would like your message processed.";
             }
-            catch (DotNetUserGroupException e) when (e.PanicLevel == ExceptionPanicLevelEnum.CurlIntoFetalPositionAndCry)
+            catch (DotNetUserGroupException e) when (user.Name.Split(' ').Length < 2)
             {
-                WriteToImmediateAttentionLog(e, "Something terrible has happened! This application is doomed!");
-                Message = DemoConstants.OopsMessage;
+                WriteToMoreImportantThingsToWorryAboutLog(e, "User did not provide full name");
+                Message = "I'm sorry but we cannot process your message correctly if you don't provide your full name.";
+            }
+            catch (DotNetUserGroupException)
+            {
+                Message = "Run and don't look back!";
             }
             finally
             {
