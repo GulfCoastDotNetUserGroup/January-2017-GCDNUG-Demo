@@ -34,6 +34,7 @@
             this.getGreetingButton = new System.Windows.Forms.Button();
             this.messageTextBox = new System.Windows.Forms.TextBox();
             this.demosGroupBox = new System.Windows.Forms.GroupBox();
+            this.outVariablesRadioButton = new System.Windows.Forms.RadioButton();
             this.label2 = new System.Windows.Forms.Label();
             this.awaitRadioButton = new System.Windows.Forms.RadioButton();
             this.exceptionFiltersRadioButton = new System.Windows.Forms.RadioButton();
@@ -66,6 +67,7 @@
             this.nameTextBox.Size = new System.Drawing.Size(259, 20);
             this.nameTextBox.TabIndex = 1;
             this.nameTextBox.TextChanged += new System.EventHandler(this.Stuff_Changed);
+            this.nameTextBox.KeyDown += new System.Windows.Forms.KeyEventHandler(this.nameTextBox_KeyDown);
             // 
             // getGreetingButton
             // 
@@ -83,11 +85,12 @@
             this.messageTextBox.Multiline = true;
             this.messageTextBox.Name = "messageTextBox";
             this.messageTextBox.ReadOnly = true;
-            this.messageTextBox.Size = new System.Drawing.Size(761, 184);
+            this.messageTextBox.Size = new System.Drawing.Size(761, 264);
             this.messageTextBox.TabIndex = 3;
             // 
             // demosGroupBox
             // 
+            this.demosGroupBox.Controls.Add(this.outVariablesRadioButton);
             this.demosGroupBox.Controls.Add(this.label2);
             this.demosGroupBox.Controls.Add(this.awaitRadioButton);
             this.demosGroupBox.Controls.Add(this.exceptionFiltersRadioButton);
@@ -98,16 +101,28 @@
             this.demosGroupBox.Controls.Add(this.stringInterpolationRadioButton);
             this.demosGroupBox.Location = new System.Drawing.Point(801, 51);
             this.demosGroupBox.Name = "demosGroupBox";
-            this.demosGroupBox.Size = new System.Drawing.Size(200, 295);
+            this.demosGroupBox.Size = new System.Drawing.Size(200, 375);
             this.demosGroupBox.TabIndex = 4;
             this.demosGroupBox.TabStop = false;
             this.demosGroupBox.Text = "Language Features";
+            // 
+            // outVariablesRadioButton
+            // 
+            this.outVariablesRadioButton.AutoSize = true;
+            this.outVariablesRadioButton.Location = new System.Drawing.Point(10, 212);
+            this.outVariablesRadioButton.Name = "outVariablesRadioButton";
+            this.outVariablesRadioButton.Size = new System.Drawing.Size(88, 17);
+            this.outVariablesRadioButton.TabIndex = 8;
+            this.outVariablesRadioButton.TabStop = true;
+            this.outVariablesRadioButton.Text = "Out Variables";
+            this.outVariablesRadioButton.UseVisualStyleBackColor = true;
+            this.outVariablesRadioButton.Click += new System.EventHandler(this.Stuff_Changed);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(10, 193);
+            this.label2.Location = new System.Drawing.Point(7, 194);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(36, 15);
             this.label2.TabIndex = 7;
@@ -233,7 +248,7 @@
             this.groupBox1.Controls.Add(this.radioButton3);
             this.groupBox1.Controls.Add(this.radioButton2);
             this.groupBox1.Controls.Add(this.radioButton1);
-            this.groupBox1.Location = new System.Drawing.Point(12, 294);
+            this.groupBox1.Location = new System.Drawing.Point(12, 374);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(119, 52);
             this.groupBox1.TabIndex = 8;
@@ -244,7 +259,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1013, 358);
+            this.ClientSize = new System.Drawing.Size(1013, 438);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.demosGroupBox);
             this.Controls.Add(this.messageTextBox);
@@ -282,6 +297,7 @@
         private System.Windows.Forms.RadioButton radioButton3;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.RadioButton outVariablesRadioButton;
     }
 }
 

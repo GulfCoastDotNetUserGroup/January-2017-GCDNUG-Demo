@@ -39,6 +39,9 @@ namespace January_2017_GCDNUG_Demo
                     bool useAwait = nameTextBox.Text.ToLower() == "yes";
                     messageTextBox.Text = new AwaitInCatchBlockDemo(useAwait).GetMessage();
                     return;
+                case "outVariablesRadioButton":
+                    messageBuilders.Add(new OutVariablesDemo(nameTextBox.Text));
+                    break;
             }
 
             DisplayMessage(messageBuilders);
@@ -50,9 +53,7 @@ namespace January_2017_GCDNUG_Demo
             messageTextBox.Text = message;
         }
 
-        #region Events
-
-        private void GetGreetingButton_Click(object sender, EventArgs e)
+        private void DoStuff()
         {
             RadioButton checkedRadioButton = demosGroupBox.Controls.OfType<RadioButton>().FirstOrDefault(r => r.Checked);
 
@@ -64,11 +65,27 @@ namespace January_2017_GCDNUG_Demo
             GetMessage(checkedRadioButton);
         }
 
+        #region Events
+
+        private void GetGreetingButton_Click(object sender, EventArgs e)
+        {
+            DoStuff();
+        }
+
         private void Stuff_Changed(object sender, EventArgs e)
         {
             messageTextBox.Text = string.Empty;
         }
 
+        private void nameTextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                DoStuff();
+            }
+        }
+
         #endregion Events
+
     }
 }
