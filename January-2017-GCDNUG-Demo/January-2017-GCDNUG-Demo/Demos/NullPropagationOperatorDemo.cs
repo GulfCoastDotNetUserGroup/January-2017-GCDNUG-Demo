@@ -36,16 +36,15 @@ namespace January_2017_GCDNUG_Demo.Demos
 
         public string GetMessage()
         {
-            var user = new User(Name);
-            string doubleSpace = $"{Environment.NewLine}{Environment.NewLine}";
+            var user = !string.IsNullOrEmpty(Name) 
+                ? new User(Name) 
+                : new User();
 
             var sb = new StringBuilder();
-            sb.Append(GreetingWithNullChecks(user) ?? string.Empty);
-            sb.Append(DemoConstants.DoubleSpace);
-            sb.Append(GreetingWithNullPropagationOperator(user) ?? string.Empty);
-            sb.Append(DemoConstants.DoubleSpace);
-            sb.Append(GreetingWithNullPropagationOperator(null) ?? string.Empty);
-            sb.Append(DemoConstants.DoubleSpace);
+            sb.Append($"OLD WAY - NULL CHECKS{DemoConstants.DoubleSpace}");
+            sb.Append($"{GreetingWithNullChecks(user)}{DemoConstants.DoubleSpace}{Environment.NewLine}");
+            sb.Append($"NEW WAY - NULL PROPAGATION OPERATOR{DemoConstants.DoubleSpace}");
+            sb.Append($"{GreetingWithNullPropagationOperator(user)}");
 
             return sb.ToString();
         }
@@ -59,15 +58,15 @@ namespace January_2017_GCDNUG_Demo.Demos
         {
             if (user == null || user.Name == null)
             {
-                return $"{DemoConstants.Hello}{NullUserOrNameMessage}  {GetCurrentMethod().MethodSignature()}";
+                return $"{GetCurrentMethod().MethodSignature()}{Environment.NewLine}{DemoConstants.Hello}{NullUserOrNameMessage}";
             }
-            return $"{DemoConstants.Hello}{user.Name}  {GetCurrentMethod().MethodSignature()}";
+            return $"{GetCurrentMethod().MethodSignature()}{Environment.NewLine}{DemoConstants.Hello}{user.Name}";
         }
 
         // NEW HOTNESS
         private string GreetingWithNullPropagationOperator(User user)
         {
-            return $"{DemoConstants.Hello}{user?.Name ?? NullUserOrNameMessage}  {GetCurrentMethod().MethodSignature()}";
+            return $"{GetCurrentMethod().MethodSignature()}{Environment.NewLine}{DemoConstants.Hello}{user?.Name ?? NullUserOrNameMessage}";
         }
 
         #endregion Private Methods

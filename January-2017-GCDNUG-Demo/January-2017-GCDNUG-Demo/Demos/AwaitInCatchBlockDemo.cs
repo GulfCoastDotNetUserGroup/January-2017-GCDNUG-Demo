@@ -1,23 +1,28 @@
 ﻿using January_2017_GCDNUG_Demo.Interfaces;
 using January_2017_GCDNUG_Demo.Misc;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using static January_2017_GCDNUG_Demo.Helpers.ExceptionHelper;
 
 namespace January_2017_GCDNUG_Demo.Demos
 {
     public class AwaitInCatchBlockDemo : IMessageBuilder
     {
+        #region Properties
+
         public bool UseAwait { get; set; }
-        public string Message { get; set; }
+        private string Message { get; set; }
+
+        #endregion Properties
+
+        #region Constructors
 
         public AwaitInCatchBlockDemo(bool useAwait)
         {
             UseAwait = useAwait;
         }
+
+        #endregion Constructors
+
+        #region Public Methods
 
         public string GetMessage()
         {
@@ -31,6 +36,10 @@ namespace January_2017_GCDNUG_Demo.Demos
             }
             return Message;
         }
+
+        #endregion Public Methods
+
+        #region Private Methods
 
         private void BuildMessage()
         {
@@ -54,8 +63,10 @@ namespace January_2017_GCDNUG_Demo.Demos
             catch (DotNetUserGroupException e)
             {
                 Message = DemoConstants.OopsMessage;
-                await LogExceptionAsync(e, string.Empty);
+                await LogExceptionLongRunningAsync(e, string.Empty);
             }
         }
+
+        #endregion Private Methods
     }
 }

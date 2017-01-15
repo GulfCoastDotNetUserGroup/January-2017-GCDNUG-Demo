@@ -1,9 +1,11 @@
-﻿using System.Text;
+﻿using System;
+using System.Text;
 using January_2017_GCDNUG_Demo.Helpers;
 using January_2017_GCDNUG_Demo.Interfaces;
 using January_2017_GCDNUG_Demo.Misc;
 // Static using
 using static System.Reflection.MethodBase;
+
 
 namespace January_2017_GCDNUG_Demo.Demos
 {
@@ -29,10 +31,11 @@ namespace January_2017_GCDNUG_Demo.Demos
         public string GetMessage()
         {
             var sb = new StringBuilder();
-            sb.Append(GreetingWithConcatination());
-            sb.Append(DemoConstants.DoubleSpace);
-            sb.Append(GreetingWithStringFormat());
-            sb.Append(DemoConstants.DoubleSpace);
+
+            sb.Append($"{GreetingWithConcatination()}{DemoConstants.DoubleSpace}");
+
+            sb.Append($"{GreetingWithStringFormat()}{DemoConstants.DoubleSpace}");
+
             sb.Append(GreetingWithStringInterpolation());
 
             return sb.ToString();
@@ -45,19 +48,20 @@ namespace January_2017_GCDNUG_Demo.Demos
         // With '+' operator
         private string GreetingWithConcatination()
         {
-            return DemoConstants.Hello + Name + "!  "  + GetCurrentMethod().MethodSignature();
+            return GetCurrentMethod().MethodSignature() + Environment.NewLine + DemoConstants.Hello + Name + "!";
         }
 
         // With string.Format()
         private string GreetingWithStringFormat()
         {
-            return string.Format("{0}{1}!  {2}", DemoConstants.Hello,  Name, GetCurrentMethod().MethodSignature());
+            return string.Format("{0}{1}{2}{3}!",
+                GetCurrentMethod().MethodSignature(), Environment.NewLine, DemoConstants.Hello,  Name);
         }
 
         // With string interpolation
         private string GreetingWithStringInterpolation()
         {
-            return $"{DemoConstants.Hello}{Name}!  {GetCurrentMethod().MethodSignature()}";
+            return $"{GetCurrentMethod().MethodSignature()}{Environment.NewLine}{DemoConstants.Hello}{Name}!";
         }
 
         #endregion Private Methods

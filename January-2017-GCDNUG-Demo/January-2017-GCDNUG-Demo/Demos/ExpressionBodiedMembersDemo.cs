@@ -1,11 +1,11 @@
-﻿using System.Text;
+﻿using System;
+using System.Text;
 using January_2017_GCDNUG_Demo.Helpers;
 using January_2017_GCDNUG_Demo.Interfaces;
 using January_2017_GCDNUG_Demo.Misc;
 
 // Static usings
 using static System.Reflection.MethodBase;
-
 
 namespace January_2017_GCDNUG_Demo.Demos
 {
@@ -21,10 +21,10 @@ namespace January_2017_GCDNUG_Demo.Demos
 
         public string Name { get; set; }
 
-        public string Message { get; set; }
+        private string Message { get; set; }
 
         // Old school single line get only property
-        public string OldSchoolGetOnlyPropertyMessage
+        private string OldSchoolGetOnlyPropertyMessage
         {
             get
             {
@@ -33,7 +33,7 @@ namespace January_2017_GCDNUG_Demo.Demos
         }
 
         // Expression-bodied Member - single line get only property
-        public string ExpressionBodiedMemberMessage => $"{DemoConstants.Hello}{Name}!  {GetCurrentMethod().MethodSignature()}";
+        private string ExpressionBodiedProperyMessage => $"{DemoConstants.Hello}{Name}!  {GetCurrentMethod().MethodSignature()}";
 
         #endregion Properties
 
@@ -52,16 +52,10 @@ namespace January_2017_GCDNUG_Demo.Demos
         {
             var sb = new StringBuilder();
 
-            sb.Append(GetOldSchoolSingleLineMessage());
-            sb.Append(DemoConstants.DoubleSpace);
-
-            sb.Append(GetExpressionBodiedMemberMessage());
-            sb.Append(DemoConstants.DoubleSpace);
-
-            sb.Append(OldSchoolGetOnlyPropertyMessage);
-            sb.Append(DemoConstants.DoubleSpace);
-
-            sb.Append(ExpressionBodiedMemberMessage);
+            sb.Append($"OLD WAY{DemoConstants.DoubleSpace}");
+            sb.Append($"{GetOldSchoolSingleLineMethodMessage()}{DemoConstants.DoubleSpace}");
+            sb.Append($"{Environment.NewLine}NEW WAY{DemoConstants.DoubleSpace}");
+            sb.Append(GetExpressionBodiedMethodMessage());
 
             return sb.ToString();
         }
@@ -71,13 +65,13 @@ namespace January_2017_GCDNUG_Demo.Demos
         #region Private Methods
 
         // OLD SINGLE LINE
-        private string GetOldSchoolSingleLineMessage()
+        private string GetOldSchoolSingleLineMethodMessage()
         {
-            return $"{DemoConstants.Hello}{Name}!  {GetCurrentMethod().MethodSignature()}";
+            return $"{GetCurrentMethod().MethodSignature()}{Environment.NewLine}{DemoConstants.Hello}{Name}!";
         }
 
         // NEW HOTNESS
-        private string GetExpressionBodiedMemberMessage() => $"{DemoConstants.Hello}{Name}!  {GetCurrentMethod().MethodSignature()}";
+        private string GetExpressionBodiedMethodMessage() => $"{GetCurrentMethod().MethodSignature()}{Environment.NewLine}{DemoConstants.Hello}{Name}!";
 
         #endregion Private Methods
     }

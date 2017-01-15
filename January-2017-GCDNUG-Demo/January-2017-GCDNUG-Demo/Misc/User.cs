@@ -16,6 +16,11 @@ namespace January_2017_GCDNUG_Demo.Misc
 
         #region Constructors
 
+        public User()
+        {
+            Name = null;
+        }
+
         public User(string name)
         {
             Name = name;
