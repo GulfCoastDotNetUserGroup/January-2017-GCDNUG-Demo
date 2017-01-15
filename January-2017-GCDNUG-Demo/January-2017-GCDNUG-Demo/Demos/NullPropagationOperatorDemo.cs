@@ -9,7 +9,7 @@ using static System.Reflection.MethodBase;
 
 namespace January_2017_GCDNUG_Demo.Demos
 {
-    public class NullPropagationOperatorDemo : IMessageBuilder
+    public class NullPropagationOperatorDemo : AbstractDemo
     {
         #region Properties
 
@@ -34,7 +34,7 @@ namespace January_2017_GCDNUG_Demo.Demos
 
         #region Public Methods
 
-        public string GetMessage()
+        public override string GetMessageInternal()
         {
             var user = !string.IsNullOrEmpty(Name) 
                 ? new User(Name) 

@@ -9,7 +9,7 @@ using static System.Reflection.MethodBase;
 
 namespace January_2017_GCDNUG_Demo.Demos
 {
-    public class StringInterpolationDemo : IMessageBuilder
+    public class StringInterpolationDemo : AbstractDemo
     {
         #region Properties
 
@@ -28,7 +28,7 @@ namespace January_2017_GCDNUG_Demo.Demos
 
         #region Public Methods
 
-        public string GetMessage()
+        public override string GetMessageInternal()
         {
             var sb = new StringBuilder();
 

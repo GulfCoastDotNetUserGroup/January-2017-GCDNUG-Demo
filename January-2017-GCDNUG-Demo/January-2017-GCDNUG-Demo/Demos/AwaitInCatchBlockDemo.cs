@@ -4,7 +4,7 @@ using static January_2017_GCDNUG_Demo.Helpers.ExceptionHelper;
 
 namespace January_2017_GCDNUG_Demo.Demos
 {
-    public class AwaitInCatchBlockDemo : IMessageBuilder
+    public class AwaitInCatchBlockDemo : AbstractDemo
     {
         #region Properties
 
@@ -24,7 +24,7 @@ namespace January_2017_GCDNUG_Demo.Demos
 
         #region Public Methods
 
-        public string GetMessage()
+        public override string GetMessageInternal()
         {
             if (UseAwait)
             {
