@@ -52,6 +52,7 @@
   <ItemGroup>
     <Compile Include="Demos\AwaitInCatchBlockDemo.cs" />
     <Compile Include="Demos\AbstractDemo.cs" />
+    <Compile Include="Demos\DeconstructionDemo.cs" />
     <Compile Include="Demos\ExceptionFiltersDemo.cs" />
     <Compile Include="Demos\ExpressionBodiedMembersDemo.cs" />
     <Compile Include="Demos\PatternMatchingDemo.cs" />

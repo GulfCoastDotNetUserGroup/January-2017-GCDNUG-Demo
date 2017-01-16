@@ -34,6 +34,9 @@
             this.getGreetingButton = new System.Windows.Forms.Button();
             this.messageTextBox = new System.Windows.Forms.TextBox();
             this.demosGroupBox = new System.Windows.Forms.GroupBox();
+            this.deconstructionRadioButton = new System.Windows.Forms.RadioButton();
+            this.tuplesRadioButton = new System.Windows.Forms.RadioButton();
+            this.patternMatchingRadioButton = new System.Windows.Forms.RadioButton();
             this.outVariablesRadioButton = new System.Windows.Forms.RadioButton();
             this.label2 = new System.Windows.Forms.Label();
             this.awaitRadioButton = new System.Windows.Forms.RadioButton();
@@ -43,8 +46,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.nullConditionalRadioButton = new System.Windows.Forms.RadioButton();
             this.stringInterpolationRadioButton = new System.Windows.Forms.RadioButton();
-            this.patternMatchingRadioButton = new System.Windows.Forms.RadioButton();
-            this.tuplesRadioButton = new System.Windows.Forms.RadioButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.demosGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -94,6 +95,7 @@
             // demosGroupBox
             // 
             this.demosGroupBox.BackColor = System.Drawing.Color.Transparent;
+            this.demosGroupBox.Controls.Add(this.deconstructionRadioButton);
             this.demosGroupBox.Controls.Add(this.tuplesRadioButton);
             this.demosGroupBox.Controls.Add(this.patternMatchingRadioButton);
             this.demosGroupBox.Controls.Add(this.outVariablesRadioButton);
@@ -112,6 +114,42 @@
             this.demosGroupBox.TabIndex = 4;
             this.demosGroupBox.TabStop = false;
             this.demosGroupBox.Text = "Language Features";
+            // 
+            // deconstructionRadioButton
+            // 
+            this.deconstructionRadioButton.AutoSize = true;
+            this.deconstructionRadioButton.Location = new System.Drawing.Point(10, 286);
+            this.deconstructionRadioButton.Name = "deconstructionRadioButton";
+            this.deconstructionRadioButton.Size = new System.Drawing.Size(107, 19);
+            this.deconstructionRadioButton.TabIndex = 11;
+            this.deconstructionRadioButton.TabStop = true;
+            this.deconstructionRadioButton.Text = "Deconstruction";
+            this.deconstructionRadioButton.UseVisualStyleBackColor = true;
+            this.deconstructionRadioButton.Click += new System.EventHandler(this.Stuff_Changed);
+            // 
+            // tuplesRadioButton
+            // 
+            this.tuplesRadioButton.AutoSize = true;
+            this.tuplesRadioButton.Location = new System.Drawing.Point(10, 260);
+            this.tuplesRadioButton.Name = "tuplesRadioButton";
+            this.tuplesRadioButton.Size = new System.Drawing.Size(62, 19);
+            this.tuplesRadioButton.TabIndex = 10;
+            this.tuplesRadioButton.TabStop = true;
+            this.tuplesRadioButton.Text = "Tuples";
+            this.tuplesRadioButton.UseVisualStyleBackColor = true;
+            this.tuplesRadioButton.Click += new System.EventHandler(this.Stuff_Changed);
+            // 
+            // patternMatchingRadioButton
+            // 
+            this.patternMatchingRadioButton.AutoSize = true;
+            this.patternMatchingRadioButton.Location = new System.Drawing.Point(10, 236);
+            this.patternMatchingRadioButton.Name = "patternMatchingRadioButton";
+            this.patternMatchingRadioButton.Size = new System.Drawing.Size(118, 19);
+            this.patternMatchingRadioButton.TabIndex = 9;
+            this.patternMatchingRadioButton.TabStop = true;
+            this.patternMatchingRadioButton.Text = "Pattern Matching";
+            this.patternMatchingRadioButton.UseVisualStyleBackColor = true;
+            this.patternMatchingRadioButton.Click += new System.EventHandler(this.Stuff_Changed);
             // 
             // outVariablesRadioButton
             // 
@@ -217,30 +255,6 @@
             this.stringInterpolationRadioButton.UseVisualStyleBackColor = true;
             this.stringInterpolationRadioButton.Click += new System.EventHandler(this.Stuff_Changed);
             // 
-            // patternMatchingRadioButton
-            // 
-            this.patternMatchingRadioButton.AutoSize = true;
-            this.patternMatchingRadioButton.Location = new System.Drawing.Point(10, 236);
-            this.patternMatchingRadioButton.Name = "patternMatchingRadioButton";
-            this.patternMatchingRadioButton.Size = new System.Drawing.Size(118, 19);
-            this.patternMatchingRadioButton.TabIndex = 9;
-            this.patternMatchingRadioButton.TabStop = true;
-            this.patternMatchingRadioButton.Text = "Pattern Matching";
-            this.patternMatchingRadioButton.UseVisualStyleBackColor = true;
-            this.patternMatchingRadioButton.Click += new System.EventHandler(this.Stuff_Changed);
-            // 
-            // tuplesRadioButton
-            // 
-            this.tuplesRadioButton.AutoSize = true;
-            this.tuplesRadioButton.Location = new System.Drawing.Point(10, 260);
-            this.tuplesRadioButton.Name = "tuplesRadioButton";
-            this.tuplesRadioButton.Size = new System.Drawing.Size(62, 19);
-            this.tuplesRadioButton.TabIndex = 10;
-            this.tuplesRadioButton.TabStop = true;
-            this.tuplesRadioButton.Text = "Tuples";
-            this.tuplesRadioButton.UseVisualStyleBackColor = true;
-            this.tuplesRadioButton.Click += new System.EventHandler(this.Stuff_Changed);
-            // 
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
@@ -294,6 +308,7 @@
         private System.Windows.Forms.RadioButton patternMatchingRadioButton;
         private System.Windows.Forms.RadioButton tuplesRadioButton;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.RadioButton deconstructionRadioButton;
     }
 }
 

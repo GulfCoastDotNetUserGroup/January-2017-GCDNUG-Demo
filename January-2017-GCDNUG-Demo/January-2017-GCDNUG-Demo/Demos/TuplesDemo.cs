@@ -99,10 +99,10 @@ namespace January_2017_GCDNUG_Demo.Demos
 
         private class CustomType
         {
-            public string Input { get; set; }
-            public string InputReversed { get; set; }
-            public char[] InputAsCharArray { get; set; }
-            public int InputLength { get; set; }
+            public string Input { get; private set; }
+            public string InputReversed { get; private set; }
+            public char[] InputAsCharArray { get; private set; }
+            public int InputLength { get; private set; }
 
             public CustomType(object obj)
             {
@@ -115,7 +115,7 @@ namespace January_2017_GCDNUG_Demo.Demos
             }
         }
 
-        private void OldWayWithOutParameters(object obj, out string input, out string inputReversed, out char[] inputAsCharArray, out int inputLength)
+        private static void OldWayWithOutParameters(object obj, out string input, out string inputReversed, out char[] inputAsCharArray, out int inputLength)
         {
             input = obj.ToString();
             inputAsCharArray = input.ToCharArray();
@@ -125,7 +125,7 @@ namespace January_2017_GCDNUG_Demo.Demos
             inputLength = input.Length;
         }
 
-        private (string input, string inputReversed, char[] inputAsCharArray, int inputLength) NewWayWithTuple(object obj)
+        private static (string input, string inputReversed, char[] inputAsCharArray, int inputLength) NewWayWithTuple(object obj)
         {
             var input = obj.ToString();
             var inputAsCharArray = input.ToCharArray();

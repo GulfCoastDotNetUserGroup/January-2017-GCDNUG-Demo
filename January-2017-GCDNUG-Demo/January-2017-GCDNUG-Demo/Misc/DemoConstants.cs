@@ -32,6 +32,8 @@
 
         public const string TuplesRadioButton = "tuplesRadioButton";
 
+        public const string DeconstructionRadioButton = "deconstructionRadioButton";
+
         #endregion Demo Names
     }
 }

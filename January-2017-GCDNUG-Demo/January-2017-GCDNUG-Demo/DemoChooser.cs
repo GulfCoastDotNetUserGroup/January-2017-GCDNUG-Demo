@@ -49,6 +49,9 @@ namespace January_2017_GCDNUG_Demo
                 case TuplesRadioButton:
                     messageBuilders.Add(new TuplesDemo(nameTextBox.Text));
                     break;
+                case DeconstructionRadioButton:
+                    messageBuilders.Add(new DeconstructionDemo(nameTextBox.Text));
+                    break;
             }
 
             DisplayMessage(messageBuilders);
