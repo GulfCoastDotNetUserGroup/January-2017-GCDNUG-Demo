@@ -89,10 +89,10 @@ namespace January_2017_GCDNUG_Demo.Demos
 
         private string AssignTupleToExistingVariablesMessage()
         {
-            string input = "Some pre-existing value";
-            string inputReversed = "Some other pre-existing value";
+            var input = "Some pre-existing value";
+            var inputReversed = "Some other pre-existing value";
             char[] inputAsCharArray = {'s', 't', 'u', 'f', 'f'};
-            int inputLength = 98172;
+            var inputLength = 98172;
 
             (input, inputReversed, inputAsCharArray, inputLength) = SuperAwesomeTuple(Input);
 

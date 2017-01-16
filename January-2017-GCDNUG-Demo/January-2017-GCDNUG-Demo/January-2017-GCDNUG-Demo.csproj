@@ -55,6 +55,7 @@
     <Compile Include="Demos\DeconstructionDemo.cs" />
     <Compile Include="Demos\ExceptionFiltersDemo.cs" />
     <Compile Include="Demos\ExpressionBodiedMembersDemo.cs" />
+    <Compile Include="Demos\LocalFunctionsDemo.cs" />
     <Compile Include="Demos\PatternMatchingDemo.cs" />
     <Compile Include="Demos\NameOfDemo.cs" />
     <Compile Include="Demos\NullPropagationOperatorDemo.cs" />

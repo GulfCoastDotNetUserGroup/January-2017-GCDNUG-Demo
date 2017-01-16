@@ -47,6 +47,7 @@
             this.nullConditionalRadioButton = new System.Windows.Forms.RadioButton();
             this.stringInterpolationRadioButton = new System.Windows.Forms.RadioButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.localFunctionsRadioButton = new System.Windows.Forms.RadioButton();
             this.demosGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -95,6 +96,7 @@
             // demosGroupBox
             // 
             this.demosGroupBox.BackColor = System.Drawing.Color.Transparent;
+            this.demosGroupBox.Controls.Add(this.localFunctionsRadioButton);
             this.demosGroupBox.Controls.Add(this.deconstructionRadioButton);
             this.demosGroupBox.Controls.Add(this.tuplesRadioButton);
             this.demosGroupBox.Controls.Add(this.patternMatchingRadioButton);
@@ -266,6 +268,17 @@
             this.pictureBox1.TabIndex = 5;
             this.pictureBox1.TabStop = false;
             // 
+            // localFunctionsRadioButton
+            // 
+            this.localFunctionsRadioButton.AutoSize = true;
+            this.localFunctionsRadioButton.Location = new System.Drawing.Point(10, 312);
+            this.localFunctionsRadioButton.Name = "localFunctionsRadioButton";
+            this.localFunctionsRadioButton.Size = new System.Drawing.Size(111, 19);
+            this.localFunctionsRadioButton.TabIndex = 12;
+            this.localFunctionsRadioButton.TabStop = true;
+            this.localFunctionsRadioButton.Text = "Local Functions";
+            this.localFunctionsRadioButton.UseVisualStyleBackColor = true;
+            // 
             // DemoChooserForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -309,6 +322,7 @@
         private System.Windows.Forms.RadioButton tuplesRadioButton;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.RadioButton deconstructionRadioButton;
+        private System.Windows.Forms.RadioButton localFunctionsRadioButton;
     }
 }
 

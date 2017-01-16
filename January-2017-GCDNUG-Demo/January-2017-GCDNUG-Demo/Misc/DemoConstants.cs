@@ -34,6 +34,8 @@
 
         public const string DeconstructionRadioButton = "deconstructionRadioButton";
 
+        public const string LocalFunctionsRadioButton = "localFunctionsRadioButton";
+
         #endregion Demo Names
     }
 }

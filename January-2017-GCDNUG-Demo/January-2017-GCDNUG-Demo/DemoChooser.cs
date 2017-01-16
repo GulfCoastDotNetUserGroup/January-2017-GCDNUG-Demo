@@ -37,8 +37,7 @@ namespace January_2017_GCDNUG_Demo
                     messageBuilders.Add(new ExceptionFiltersDemo(nameTextBox.Text));
                     break;
                 case AwaitRadioButton:
-                    bool useAwait = nameTextBox.Text.ToLower() == "yes";
-                    messageTextBox.Text = new AwaitInCatchBlockDemo(useAwait).GetMessage();
+                    messageTextBox.Text = new AwaitInCatchBlockDemo(nameTextBox.Text.ToLower() == "yes").GetMessage();
                     return;
                 case OutVariablesRadioButton:
                     messageBuilders.Add(new OutVariablesDemo(nameTextBox.Text));
@@ -51,6 +50,9 @@ namespace January_2017_GCDNUG_Demo
                     break;
                 case DeconstructionRadioButton:
                     messageBuilders.Add(new DeconstructionDemo(nameTextBox.Text));
+                    break;
+                case LocalFunctionsRadioButton:
+                    messageBuilders.Add(new LocalFunctionsDemo(nameTextBox.Text));
                     break;
             }
 

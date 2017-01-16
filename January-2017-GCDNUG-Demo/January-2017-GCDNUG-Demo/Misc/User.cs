@@ -1,4 +1,5 @@
 ﻿using System;
+using System.CodeDom;
 
 namespace January_2017_GCDNUG_Demo.Misc
 {
@@ -19,11 +20,6 @@ namespace January_2017_GCDNUG_Demo.Misc
         public User()
         {
             Name = null;
-        }
-
-        public User(string name)
-        {
-            Name = name;
         }
 
         #endregion Constructors
