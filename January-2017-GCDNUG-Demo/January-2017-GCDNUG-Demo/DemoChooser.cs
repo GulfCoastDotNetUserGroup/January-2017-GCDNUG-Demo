@@ -4,6 +4,7 @@ using System.Linq;
 using System.Windows.Forms;
 using January_2017_GCDNUG_Demo.Demos;
 using January_2017_GCDNUG_Demo.Interfaces;
+using static January_2017_GCDNUG_Demo.Misc.DemoConstants;
 
 namespace January_2017_GCDNUG_Demo
 {
@@ -20,27 +21,32 @@ namespace January_2017_GCDNUG_Demo
 
             switch (checkedRadioButton.Name)
             {
-                case "stringInterpolationRadioButton":
+                case StringInterpolationRadioButton:
                     messageBuilders.Add(new StringInterpolationDemo(nameTextBox.Text));
                     break;
-                case "nullConditionalRadioButton":
+                case NullConditionalRadioButton:
                     messageBuilders.Add(new NullPropagationOperatorDemo(nameTextBox.Text));
                     break;
-                case "ExpressionBodiedMembersRadioButton":
+                case ExpressionBodiedMembersRadioButton:
                     messageBuilders.Add(new ExpressionBodiedMembersDemo(nameTextBox.Text));
                     break;
-                case "nameofRadioButton":
+                case NameofRadioButton:
                     messageBuilders.Add(new NameOfDemo(nameTextBox.Text));
                     break;
-                case "exceptionFiltersRadioButton":
+                case ExceptionFiltersRadioButton:
                     messageBuilders.Add(new ExceptionFiltersDemo(nameTextBox.Text));
                     break;
-                case "awaitRadioButton":
+                case AwaitRadioButton:
                     bool useAwait = nameTextBox.Text.ToLower() == "yes";
                     messageTextBox.Text = new AwaitInCatchBlockDemo(useAwait).GetMessage();
                     return;
-                case "outVariablesRadioButton":
+                case OutVariablesRadioButton:
                     messageBuilders.Add(new OutVariablesDemo(nameTextBox.Text));
+                    break;
+                case PatternMatchingRadioButton:
+                    messageBuilders.Add(new PatternMatchingDemo(nameTextBox.Text));
+                    break;
+                case TuplesRadioButton:
                     break;
             }
 

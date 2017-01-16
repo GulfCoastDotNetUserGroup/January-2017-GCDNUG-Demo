@@ -2,7 +2,6 @@
 using System.Text;
 using System.Collections.Generic;
 using January_2017_GCDNUG_Demo.Helpers;
-using January_2017_GCDNUG_Demo.Interfaces;
 using January_2017_GCDNUG_Demo.Misc;
 
 // Static usings
@@ -14,18 +13,16 @@ namespace January_2017_GCDNUG_Demo.Demos
     {
         #region Properties
 
-        public string Name { get; set; }
-
         public User User { get; set; }
 
         #endregion Properties
 
         #region Contructors
 
-        public NameOfDemo(string name)
+        public NameOfDemo(string input)
         {
-            Name = name;
-            User = new User(name);
+            Input = input;
+            User = new User(input);
         }
 
         #endregion Contructors

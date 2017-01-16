@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Text;
-using January_2017_GCDNUG_Demo.Interfaces;
 using January_2017_GCDNUG_Demo.Misc;
 using January_2017_GCDNUG_Demo.Helpers;
 
@@ -13,11 +12,7 @@ namespace January_2017_GCDNUG_Demo.Demos
     {
         #region Properties
 
-        public string Name { get; set; }
-
         public User User { get; set; }
-
-        private string Message { get; set; }
 
         #endregion Properties
 
@@ -25,15 +20,15 @@ namespace January_2017_GCDNUG_Demo.Demos
 
         public ExceptionFiltersDemo()
         {
-            Name = null;
+            Input = null;
             User = null;
         }
 
         public ExceptionFiltersDemo(string name)
         {
-            Name = name;
+            Input = name;
             User = !string.IsNullOrEmpty(name) 
-                ? new User(Name) 
+                ? new User(Input) 
                 : new User();
         }
 

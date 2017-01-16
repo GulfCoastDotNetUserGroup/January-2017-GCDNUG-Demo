@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Text;
 using January_2017_GCDNUG_Demo.Helpers;
-using January_2017_GCDNUG_Demo.Interfaces;
 using January_2017_GCDNUG_Demo.Misc;
 
 // Static usings
@@ -19,29 +18,25 @@ namespace January_2017_GCDNUG_Demo.Demos
     {
         #region Properties
 
-        public string Name { get; set; }
-
-        private string Message { get; set; }
-
         // Old school single line get only property
         private string OldSchoolGetOnlyPropertyMessage
         {
             get
             {
-                return $"{DemoConstants.Hello}{Name}!  {GetCurrentMethod().MethodSignature()}";
+                return $"{DemoConstants.Hello}{Input}!  {GetCurrentMethod().MethodSignature()}";
             }
         }
 
         // Expression-bodied Member - single line get only property
-        private string ExpressionBodiedProperyMessage => $"{DemoConstants.Hello}{Name}!  {GetCurrentMethod().MethodSignature()}";
+        private string ExpressionBodiedProperyMessage => $"{DemoConstants.Hello}{Input}!  {GetCurrentMethod().MethodSignature()}";
 
         #endregion Properties
 
         #region Constructors
 
-        public ExpressionBodiedMembersDemo(string name)
+        public ExpressionBodiedMembersDemo(string input)
         {
-            Name = name;
+            Input = input;
         }
 
         #endregion Constructors
@@ -67,11 +62,11 @@ namespace January_2017_GCDNUG_Demo.Demos
         // OLD SINGLE LINE
         private string GetOldSchoolSingleLineMethodMessage()
         {
-            return $"{GetCurrentMethod().MethodSignature()}{Environment.NewLine}{DemoConstants.Hello}{Name}!";
+            return $"{GetCurrentMethod().MethodSignature()}{Environment.NewLine}{DemoConstants.Hello}{Input}!";
         }
 
         // NEW HOTNESS
-        private string GetExpressionBodiedMethodMessage() => $"{GetCurrentMethod().MethodSignature()}{Environment.NewLine}{DemoConstants.Hello}{Name}!";
+        private string GetExpressionBodiedMethodMessage() => $"{GetCurrentMethod().MethodSignature()}{Environment.NewLine}{DemoConstants.Hello}{Input}!";
 
         #endregion Private Methods
     }

@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Text;
 using January_2017_GCDNUG_Demo.Helpers;
-using January_2017_GCDNUG_Demo.Interfaces;
 using January_2017_GCDNUG_Demo.Misc;
 
 // Static usings
@@ -13,21 +12,15 @@ namespace January_2017_GCDNUG_Demo.Demos
     {
         #region Properties
 
-        public string Name { get; set; }
-
-        #region Auto Property Demo
-
         public string NullUserOrNameMessage { get; set; } = "I see that you have opted to not provide a name. What are you trying to hide?";
-
-        #endregion Auto Property Demo
 
         #endregion Properties
 
         #region Constructors
 
-        public NullPropagationOperatorDemo(string name)
+        public NullPropagationOperatorDemo(string input)
         {
-            Name = name;
+            Input = input;
         }
 
         #endregion Constructors
@@ -36,8 +29,8 @@ namespace January_2017_GCDNUG_Demo.Demos
 
         public override string GetMessageInternal()
         {
-            var user = !string.IsNullOrEmpty(Name) 
-                ? new User(Name) 
+            var user = !string.IsNullOrEmpty(Input) 
+                ? new User(Input) 
                 : new User();
 
             var sb = new StringBuilder();

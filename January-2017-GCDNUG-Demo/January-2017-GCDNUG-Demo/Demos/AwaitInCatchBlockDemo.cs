@@ -1,5 +1,4 @@
-﻿using January_2017_GCDNUG_Demo.Interfaces;
-using January_2017_GCDNUG_Demo.Misc;
+﻿using January_2017_GCDNUG_Demo.Misc;
 using static January_2017_GCDNUG_Demo.Helpers.ExceptionHelper;
 
 namespace January_2017_GCDNUG_Demo.Demos
@@ -9,7 +8,6 @@ namespace January_2017_GCDNUG_Demo.Demos
         #region Properties
 
         public bool UseAwait { get; set; }
-        private string Message { get; set; }
 
         #endregion Properties
 

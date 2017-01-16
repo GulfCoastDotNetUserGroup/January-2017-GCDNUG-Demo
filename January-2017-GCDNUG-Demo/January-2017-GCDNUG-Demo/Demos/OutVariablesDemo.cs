@@ -1,5 +1,4 @@
 ﻿using January_2017_GCDNUG_Demo.Helpers;
-using January_2017_GCDNUG_Demo.Interfaces;
 using January_2017_GCDNUG_Demo.Misc;
 using System;
 using System.Text;
@@ -9,17 +8,11 @@ namespace January_2017_GCDNUG_Demo.Demos
 {
     public class OutVariablesDemo : AbstractDemo
     {
-        #region Properties
-
-        public string Name { get; set; }
-
-        #endregion Properties
-
         #region Constructors
 
-        public OutVariablesDemo(string name)
+        public OutVariablesDemo(string input)
         {
-            Name = name;
+            Input = input;
         }
 
         #endregion Constructors
@@ -45,7 +38,7 @@ namespace January_2017_GCDNUG_Demo.Demos
         private string GetMessageWithOldOutVariables()
         {
             string firstName, middleName, lastName;
-            ProcessUserInput(Name.Split(' '), out firstName, out middleName, out lastName);
+            ProcessUserInput(Input.Split(' '), out firstName, out middleName, out lastName);
 
             UserInfo userInfo = new UserInfo(firstName, middleName, lastName);
 
@@ -54,7 +47,7 @@ namespace January_2017_GCDNUG_Demo.Demos
 
         private string GetMessageWithNewOutVariables()
         {
-            ProcessUserInput(Name.Split(' '), out string firstName, out string middleName, out string lastName);
+            ProcessUserInput(Input.Split(' '), out string firstName, out string middleName, out string lastName);
 
             UserInfo userInfo = new UserInfo(firstName, middleName, lastName);
 

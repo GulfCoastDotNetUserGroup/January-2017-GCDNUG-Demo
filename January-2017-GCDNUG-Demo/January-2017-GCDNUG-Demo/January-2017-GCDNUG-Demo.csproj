@@ -50,6 +50,7 @@
     <Compile Include="Demos\AbstractDemo.cs" />
     <Compile Include="Demos\ExceptionFiltersDemo.cs" />
     <Compile Include="Demos\ExpressionBodiedMembersDemo.cs" />
+    <Compile Include="Demos\PatternMatchingDemo.cs" />
     <Compile Include="Demos\NameOfDemo.cs" />
     <Compile Include="Demos\NullPropagationOperatorDemo.cs" />
     <Compile Include="Demos\OutVariablesDemo.cs" />
@@ -60,6 +61,7 @@
     <Compile Include="DemoChooser.Designer.cs">
       <DependentUpon>DemoChooser.cs</DependentUpon>
     </Compile>
+    <Compile Include="Demos\TuplesDemo.cs" />
     <Compile Include="Helpers\ExceptionHelper.cs" />
     <Compile Include="Helpers\MethodInfoHelper.cs" />
     <Compile Include="Interfaces\IMessageBuilder.cs" />
@@ -68,6 +70,7 @@
     <Compile Include="Misc\Enums.cs" />
     <Compile Include="Misc\User.cs" />
     <Compile Include="Misc\UserInfo.cs" />
+    <Compile Include="Misc\UserInput.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="DemoChooser.resx">
