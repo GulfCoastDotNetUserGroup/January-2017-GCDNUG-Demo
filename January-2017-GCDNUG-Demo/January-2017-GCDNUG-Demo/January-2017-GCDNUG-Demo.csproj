@@ -108,6 +108,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\bg.jpg" />
+    <Content Include="Assets\csharp_6.png" />
+    <Content Include="Assets\csharp_7.png" />
     <Content Include="Assets\favicon.ico" />
     <Content Include="Assets\GCDNUGlogo.PNG" />
   </ItemGroup>

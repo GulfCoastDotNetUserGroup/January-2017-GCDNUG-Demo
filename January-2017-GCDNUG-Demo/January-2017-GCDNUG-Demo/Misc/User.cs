@@ -22,6 +22,11 @@ namespace January_2017_GCDNUG_Demo.Misc
             Name = null;
         }
 
+        public User(string name)
+        {
+            Name = name;
+        }
+
         #endregion Constructors
     }
 }

@@ -1,10 +1,11 @@
-﻿using System;
-using System.Text;
+﻿using System.Text;
 using January_2017_GCDNUG_Demo.Helpers;
 using January_2017_GCDNUG_Demo.Misc;
 
 // Static usings
 using static System.Reflection.MethodBase;
+using static System.Environment;
+using static January_2017_GCDNUG_Demo.Misc.DemoConstants;
 
 namespace January_2017_GCDNUG_Demo.Demos
 {
@@ -34,9 +35,9 @@ namespace January_2017_GCDNUG_Demo.Demos
                 : new User();
 
             var sb = new StringBuilder();
-            sb.Append($"OLD WAY - NULL CHECKS{DemoConstants.DoubleSpace}");
-            sb.Append($"{GreetingWithNullChecks(user)}{DemoConstants.DoubleSpace}{Environment.NewLine}");
-            sb.Append($"NEW WAY - NULL PROPAGATION OPERATOR{DemoConstants.DoubleSpace}");
+            sb.AppendLine($"OLD WAY - NULL CHECKS{NewLine}");
+            sb.AppendLine($"{GreetingWithNullChecks(user)}{DoubleSpace}");
+            sb.AppendLine($"NEW WAY - NULL PROPAGATION OPERATOR{NewLine}");
             sb.Append($"{GreetingWithNullPropagationOperator(user)}");
 
             return sb.ToString();
@@ -51,15 +52,15 @@ namespace January_2017_GCDNUG_Demo.Demos
         {
             if (user == null || user.Name == null)
             {
-                return $"{GetCurrentMethod().MethodSignature()}{Environment.NewLine}{DemoConstants.Hello}{NullUserOrNameMessage}";
+                return $"{GetCurrentMethod().MethodSignature()}{NewLine}{Hello}{NullUserOrNameMessage}";
             }
-            return $"{GetCurrentMethod().MethodSignature()}{Environment.NewLine}{DemoConstants.Hello}{user.Name}";
+            return $"{GetCurrentMethod().MethodSignature()}{NewLine}{Hello}{user.Name}";
         }
 
         // NEW HOTNESS
         private string GreetingWithNullPropagationOperator(User user)
         {
-            return $"{GetCurrentMethod().MethodSignature()}{Environment.NewLine}{DemoConstants.Hello}{user?.Name ?? NullUserOrNameMessage}";
+            return $"{GetCurrentMethod().MethodSignature()}{NewLine}{Hello}{user?.Name ?? NullUserOrNameMessage}";
         }
 
         #endregion Private Methods

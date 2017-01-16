@@ -1,8 +1,9 @@
 ﻿using January_2017_GCDNUG_Demo.Helpers;
 using January_2017_GCDNUG_Demo.Misc;
-using System;
 using System.Text;
 using static System.Reflection.MethodBase;
+using static System.Environment;
+using static January_2017_GCDNUG_Demo.Misc.DemoConstants;
 
 namespace January_2017_GCDNUG_Demo.Demos
 {
@@ -23,9 +24,9 @@ namespace January_2017_GCDNUG_Demo.Demos
         {
             var sb = new StringBuilder();
 
-            sb.Append($"OLD OUT VARIABLES{DemoConstants.DoubleSpace}");
-            sb.Append($"{GetMessageWithOldOutVariables()}{DemoConstants.DoubleSpace}{Environment.NewLine}");
-            sb.Append($"NEW OUT VARIABLES{DemoConstants.DoubleSpace}");
+            sb.AppendLine($"OLD OUT VARIABLES{NewLine}");
+            sb.AppendLine($"{GetMessageWithOldOutVariables()}{DoubleSpace}");
+            sb.AppendLine($"NEW OUT VARIABLES{NewLine}");
             sb.Append(GetMessageWithNewOutVariables());
 
             return sb.ToString();
@@ -42,7 +43,7 @@ namespace January_2017_GCDNUG_Demo.Demos
 
             UserInfo userInfo = new UserInfo(firstName, middleName, lastName);
 
-            return $"{GetCurrentMethod().MethodSignature()}{Environment.NewLine}{BuildMessage(userInfo)}";
+            return $"{GetCurrentMethod().MethodSignature()}{NewLine}{BuildMessage(userInfo)}";
         }
 
         private string GetMessageWithNewOutVariables()
@@ -51,18 +52,18 @@ namespace January_2017_GCDNUG_Demo.Demos
 
             UserInfo userInfo = new UserInfo(firstName, middleName, lastName);
 
-            return $"{GetCurrentMethod().MethodSignature()}{Environment.NewLine}{BuildMessage(userInfo)}";
+            return $"{GetCurrentMethod().MethodSignature()}{NewLine}{BuildMessage(userInfo)}";
         }
 
         private string BuildMessage(UserInfo userInfo)
         {
             var sb = new StringBuilder();
 
-            sb.Append($"First Name: {userInfo.UserFirstName}{Environment.NewLine}");
+            sb.AppendLine($"First Name: {userInfo.UserFirstName}");
 
             if (!string.IsNullOrEmpty(userInfo.UserMiddleName))
             {
-                sb.Append($"Middle Name: {userInfo.UserMiddleName}{Environment.NewLine}");
+                sb.AppendLine($"Middle Name: {userInfo.UserMiddleName}");
             }
             if (!string.IsNullOrEmpty(userInfo.UserLastName))
             {

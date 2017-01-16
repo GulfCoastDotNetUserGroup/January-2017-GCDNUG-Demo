@@ -2,7 +2,6 @@
 using January_2017_GCDNUG_Demo.Misc;
 using System.Text;
 using static System.Reflection.MethodBase;
-using static January_2017_GCDNUG_Demo.Misc.DemoConstants;
 using static System.Environment;
 using System.Windows.Forms;
 
@@ -51,16 +50,16 @@ namespace January_2017_GCDNUG_Demo.Demos
         {
             var sb = new StringBuilder();
 
-            sb.Append($"'IS' EXPRESSION THE OLD WAY{DoubleSpace}");
+            sb.AppendLine($"'IS' EXPRESSION THE OLD WAY{NewLine}");
 
             if (int.TryParse(Input, out int i))
             {
-                sb.Append($"Input passed as integer{NewLine}");
-                sb.Append($"{ProcessMessageWithIsExpressionTheOldWay(i)}");
+                sb.AppendLine("Input passed as integer");
+                sb.Append(ProcessMessageWithIsExpressionTheOldWay(i));
             }
 
-            sb.Append($"Input passed as a string{NewLine}");
-            sb.Append($"{ProcessMessageWithIsExpressionTheOldWay(Input)}");
+            sb.AppendLine($"Input passed as a string");
+            sb.Append(ProcessMessageWithIsExpressionTheOldWay(Input));
             sb.Append(NewLine);
 
             return sb.ToString();
@@ -70,17 +69,16 @@ namespace January_2017_GCDNUG_Demo.Demos
         {
             var sb = new StringBuilder();
 
-            sb.Append($"'IS' EXPRESSION WITH PATTERNS{DoubleSpace}");
+            sb.AppendLine($"'IS' EXPRESSION WITH PATTERNS{NewLine}");
 
             if (int.TryParse(Input, out int i))
             {
-                sb.Append($"Input passed as integer{NewLine}");
+                sb.AppendLine("Input passed as integer");
                 sb.Append($"{ProcessMessageWithIsExpressionWithPatterns(i)}");
             }
 
-            sb.Append($"Input passed as a string{NewLine}");
-            sb.Append($"{ProcessMessageWithIsExpressionTheOldWay(Input)}");
-            sb.Append(NewLine);
+            sb.AppendLine($"Input passed as a string");
+            sb.AppendLine(ProcessMessageWithIsExpressionTheOldWay(Input));
 
             return sb.ToString();
         }
@@ -89,7 +87,7 @@ namespace January_2017_GCDNUG_Demo.Demos
         {
             var sb = new StringBuilder();
 
-            sb.Append($"'SWITCH' STATEMENT WITH PATTERNS{DoubleSpace}");
+            sb.AppendLine($"'SWITCH' STATEMENT WITH PATTERNS{NewLine}");
 
             // Pass as string
             sb.Append(ProcessMessageWithPatternsInSwitchStatement(Input));
@@ -109,40 +107,40 @@ namespace January_2017_GCDNUG_Demo.Demos
 
         #endregion GET MESSAGES
 
-        private string ProcessMessageWithIsExpressionTheOldWay(object obj)
+        private static string ProcessMessageWithIsExpressionTheOldWay(object obj)
         {
             var sb = new StringBuilder();
-            sb.Append($"{GetCurrentMethod().MethodSignature()}{NewLine}");
+            sb.AppendLine(GetCurrentMethod().MethodSignature());
 
             int i;
             if (obj is int)
             {
                 i = (int)obj;
-                sb.Append($"You have entered {i} which is a valid integer. {i} squared is {i*i}");
+                sb.AppendLine($"You have entered {i} which is a valid integer. {i} squared is {i*i}");
             }
             else if (obj is string && int.TryParse(obj.ToString(), out i))
             {
-                sb.Append($"You have entered {i} which is a valid integer. {i} squared is {i*i}");
+                sb.AppendLine($"You have entered {i} which is a valid integer. {i} squared is {i*i}");
             }
             else
             {
-                sb.Append("You're not very good at this.");
+                sb.AppendLine("You're not very good at this.");
             }
-            sb.Append(DoubleSpace);
+            sb.Append(NewLine);
           
             return sb.ToString();
         }
 
-        private string ProcessMessageWithIsExpressionWithPatterns(object obj)
+        private static string ProcessMessageWithIsExpressionWithPatterns(object obj)
         {
             var sb = new StringBuilder();
-            sb.Append($"{GetCurrentMethod().MethodSignature()}{NewLine}");
+            sb.AppendLine(GetCurrentMethod().MethodSignature());
 
-            sb.Append((obj is int i || (obj is string s && int.TryParse(s, out i))) 
+            sb.AppendLine((obj is int i || (obj is string s && int.TryParse(s, out i))) 
                 ? $"You have entered {i} which is a valid integer. {i} squared is {i*i}" 
                 : "You're not very good at this.");
 
-            sb.Append(DoubleSpace);
+            sb.Append(NewLine);
 
             return sb.ToString();
         }
@@ -155,8 +153,6 @@ namespace January_2017_GCDNUG_Demo.Demos
         /// <returns></returns>
         private string ProcessMessageWithPatternsInSwitchStatement(object obj)
         {
-            var methodSignature = GetCurrentMethod().MethodSignature();
-
             switch (obj)
             {
                 case string s:
@@ -169,7 +165,7 @@ namespace January_2017_GCDNUG_Demo.Demos
                     return $"Your input of '{ui.Input}' was passed in as a UserInput object.{NewLine}";
             }
 
-            return "I'm not sure what type of object you passed in but it wasn't one I was checking for.";
+            return $"I'm not sure what type of object you passed in but it wasn't one I was checking for.{NewLine}";
         }
 
         #endregion Private Methods

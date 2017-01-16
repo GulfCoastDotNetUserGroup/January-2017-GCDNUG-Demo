@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Text;
 using January_2017_GCDNUG_Demo.Helpers;
-using static System.Environment;
 using static System.Reflection.MethodBase;
 
 namespace January_2017_GCDNUG_Demo.Demos
@@ -26,12 +25,9 @@ namespace January_2017_GCDNUG_Demo.Demos
         {
             var sb = new StringBuilder();
 
-            sb.Append(ConsumeTupleStandardMessage());
-            sb.Append(NewLine);
-            sb.Append(AssignTupleToFreshVariablesMessage());
-            sb.Append(NewLine);
-            sb.Append(AssignTupleToFreshVariablesSingleVarMessage());
-            sb.Append(NewLine);
+            sb.AppendLine(ConsumeTupleStandardMessage());
+            sb.AppendLine(AssignTupleToFreshVariablesMessage());
+            sb.AppendLine(AssignTupleToFreshVariablesSingleVarMessage());
             sb.Append(AssignTupleToExistingVariablesMessage());
 
             return sb.ToString();
@@ -47,11 +43,11 @@ namespace January_2017_GCDNUG_Demo.Demos
 
             var sb = new StringBuilder();
 
-            sb.Append($"{GetCurrentMethod().MethodSignature()}{NewLine}");
-            sb.Append($"Input: {tuple.input}{NewLine}");
-            sb.Append($"Input Reversed: {tuple.inputReversed}{NewLine}");
-            sb.Append($"Input As Character Array: {new string(tuple.inputAsCharArray)}{NewLine}");
-            sb.Append($"Input Length: {tuple.inputLength}{NewLine}");
+            sb.AppendLine($"{GetCurrentMethod().MethodSignature()}");
+            sb.AppendLine($"Input: {tuple.input}");
+            sb.AppendLine($"Input Reversed: {tuple.inputReversed}");
+            sb.AppendLine($"Input As Character Array: {new string(tuple.inputAsCharArray)}");
+            sb.AppendLine($"Input Length: {tuple.inputLength}");
 
             return sb.ToString();
         }
@@ -63,11 +59,11 @@ namespace January_2017_GCDNUG_Demo.Demos
 
             var sb = new StringBuilder();
 
-            sb.Append($"{GetCurrentMethod().MethodSignature()}{NewLine}");
-            sb.Append($"Input: {input}{NewLine}");
-            sb.Append($"Input Reversed: {inputReversed}{NewLine}");
-            sb.Append($"Input As Character Array: {new string(inputAsCharArray)}{NewLine}");
-            sb.Append($"Input Length: {inputLength}{NewLine}");
+            sb.AppendLine($"{GetCurrentMethod().MethodSignature()}");
+            sb.AppendLine($"Input: {input}");
+            sb.AppendLine($"Input Reversed: {inputReversed}");
+            sb.AppendLine($"Input As Character Array: {new string(inputAsCharArray)}");
+            sb.AppendLine($"Input Length: {inputLength}");
 
             return sb.ToString();
         }
@@ -78,11 +74,11 @@ namespace January_2017_GCDNUG_Demo.Demos
 
             var sb = new StringBuilder();
 
-            sb.Append($"{GetCurrentMethod().MethodSignature()}{NewLine}");
-            sb.Append($"Input: {input}{NewLine}");
-            sb.Append($"Input Reversed: {inputReversed}{NewLine}");
-            sb.Append($"Input As Character Array: {new string(inputAsCharArray)}{NewLine}");
-            sb.Append($"Input Length: {inputLength}{NewLine}");
+            sb.AppendLine($"{GetCurrentMethod().MethodSignature()}");
+            sb.AppendLine($"Input: {input}");
+            sb.AppendLine($"Input Reversed: {inputReversed}");
+            sb.AppendLine($"Input As Character Array: {new string(inputAsCharArray)}");
+            sb.AppendLine($"Input Length: {inputLength}");
 
             return sb.ToString();
         }
@@ -98,11 +94,11 @@ namespace January_2017_GCDNUG_Demo.Demos
 
             var sb = new StringBuilder();
 
-            sb.Append($"{GetCurrentMethod().MethodSignature()}{NewLine}");
-            sb.Append($"Input: {input}{NewLine}");
-            sb.Append($"Input Reversed: {inputReversed}{NewLine}");
-            sb.Append($"Input As Character Array: {new string(inputAsCharArray)}{NewLine}");
-            sb.Append($"Input Length: {inputLength}{NewLine}");
+            sb.AppendLine($"{GetCurrentMethod().MethodSignature()}");
+            sb.AppendLine($"Input: {input}");
+            sb.AppendLine($"Input Reversed: {inputReversed}");
+            sb.AppendLine($"Input As Character Array: {new string(inputAsCharArray)}");
+            sb.AppendLine($"Input Length: {inputLength}");
 
             return sb.ToString();
         }

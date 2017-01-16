@@ -1,10 +1,10 @@
-﻿using System;
-using System.Text;
+﻿using System.Text;
 using January_2017_GCDNUG_Demo.Misc;
 using January_2017_GCDNUG_Demo.Helpers;
-
 using static January_2017_GCDNUG_Demo.Helpers.ExceptionHelper;
 using static System.Reflection.MethodBase;
+using static System.Environment;
+using static January_2017_GCDNUG_Demo.Misc.DemoConstants;
 
 namespace January_2017_GCDNUG_Demo.Demos
 {
@@ -40,13 +40,13 @@ namespace January_2017_GCDNUG_Demo.Demos
         {
             var sb = new StringBuilder();
 
-            sb.Append($"WITHOUT EXCEPTION FILTERS{DemoConstants.DoubleSpace}");
+            sb.AppendLine($"WITHOUT EXCEPTION FILTERS{NewLine}");
 
             ProcessMessageWithoutExceptionFilters();
             sb.Append(Message);
-            sb.Append(DemoConstants.DoubleSpace + Environment.NewLine);
+            sb.AppendLine(DoubleSpace);
 
-            sb.Append($"WITH EXCEPTION FILTERS{DemoConstants.DoubleSpace}");
+            sb.AppendLine($"WITH EXCEPTION FILTERS{NewLine}");
 
             ProcessMessageWithExceptionFilters();
             sb.Append(Message);
@@ -62,18 +62,18 @@ namespace January_2017_GCDNUG_Demo.Demos
         {
             try
             {
-                Message = $"{GetCurrentMethod().MethodSignature()}{Environment.NewLine}";
+                Message = $"{GetCurrentMethod().MethodSignature()}{NewLine}";
 
                 if (User == null) throw new DotNetUserGroupException();
                 if (string.IsNullOrEmpty(User.Name)) throw new DotNetUserGroupException();
                 if (User.Name.Split(' ').Length < 2) throw new DotNetUserGroupException();
 
-                Message += $"{DemoConstants.Hello}{User.Name}";
+                Message += $"{Hello}{User.Name}";
             }
             catch (DotNetUserGroupException e)
             {
                 LogException(e, "EXCEPTION");
-                Message += DemoConstants.OopsMessage;
+                Message += OopsMessage;
             }
         }
 
@@ -81,17 +81,17 @@ namespace January_2017_GCDNUG_Demo.Demos
         {
             try
             {
-                Message = $"{GetCurrentMethod().MethodSignature()}{Environment.NewLine}";
+                Message = $"{GetCurrentMethod().MethodSignature()}{NewLine}";
 
                 if (User == null) throw new DotNetUserGroupException();
                 if (string.IsNullOrEmpty(User.Name)) throw new DotNetUserGroupException();
                 if (User.Name.Split(' ').Length < 2) throw new DotNetUserGroupException();
 
-                Message += $"{DemoConstants.Hello}{User.Name}";
+                Message += $"{Hello}{User.Name}";
             }
             catch (DotNetUserGroupException e) when (User == null)
             {
-                Message += DemoConstants.OopsMessage;
+                Message += OopsMessage;
                 WriteToImmediateAttentionLog(e, "Something terrible has happened! This application is doomed!");                              
             }
             catch (DotNetUserGroupException e) when (string.IsNullOrEmpty(User.Name))

@@ -1,11 +1,11 @@
-﻿using System;
-using System.Text;
+﻿using System.Text;
 using System.Collections.Generic;
 using January_2017_GCDNUG_Demo.Helpers;
 using January_2017_GCDNUG_Demo.Misc;
 
 // Static usings
 using static System.Reflection.MethodBase;
+using static System.Environment;
 
 namespace January_2017_GCDNUG_Demo.Demos
 {
@@ -31,7 +31,7 @@ namespace January_2017_GCDNUG_Demo.Demos
 
         public override string GetMessageInternal()
         {
-            return $"{GetUserDetailsWithLiteralStrings()}{Environment.NewLine}{GetUserDetailsWithNameOf()}";
+            return $"{GetUserDetailsWithLiteralStrings()}{NewLine}{GetUserDetailsWithNameOf()}";
         }
 
         #endregion Public Methods
@@ -48,7 +48,7 @@ namespace January_2017_GCDNUG_Demo.Demos
                 { "Speceis", User.Species }
             };
 
-            return $"{GetCurrentMethod().MethodSignature()}{Environment.NewLine}{GetMessageFromDictionary(userPropertyDictionary)}";
+            return $"{GetCurrentMethod().MethodSignature()}{NewLine}{GetMessageFromDictionary(userPropertyDictionary)}";
         }
 
         private string GetUserDetailsWithNameOf()
@@ -62,7 +62,7 @@ namespace January_2017_GCDNUG_Demo.Demos
                 [nameof(User.Species)] = User.Species
             };
 
-            return $"{GetCurrentMethod().MethodSignature()}{Environment.NewLine}{GetMessageFromDictionary(userPropertyDictionary)}";
+            return $"{GetCurrentMethod().MethodSignature()}{NewLine}{GetMessageFromDictionary(userPropertyDictionary)}";
         }
 
         private string GetMessageFromDictionary(Dictionary<string, string> dict)
@@ -71,7 +71,7 @@ namespace January_2017_GCDNUG_Demo.Demos
 
             foreach (var pair in dict)
             {
-                sb.Append($"{pair.Key} = {pair.Value}{Environment.NewLine}");
+                sb.AppendLine($"{pair.Key} = {pair.Value}");
             }
 
             return sb.ToString();

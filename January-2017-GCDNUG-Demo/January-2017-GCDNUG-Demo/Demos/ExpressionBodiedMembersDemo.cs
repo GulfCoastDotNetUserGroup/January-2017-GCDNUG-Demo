@@ -1,10 +1,10 @@
-﻿using System;
-using System.Text;
+﻿using System.Text;
 using January_2017_GCDNUG_Demo.Helpers;
-using January_2017_GCDNUG_Demo.Misc;
 
 // Static usings
 using static System.Reflection.MethodBase;
+using static System.Environment;
+using static January_2017_GCDNUG_Demo.Misc.DemoConstants;
 
 namespace January_2017_GCDNUG_Demo.Demos
 {
@@ -23,12 +23,12 @@ namespace January_2017_GCDNUG_Demo.Demos
         {
             get
             {
-                return $"{DemoConstants.Hello}{Input}!  {GetCurrentMethod().MethodSignature()}";
+                return $"{Hello}{Input}!  {GetCurrentMethod().MethodSignature()}";
             }
         }
 
         // Expression-bodied Member - single line get only property
-        private string ExpressionBodiedProperyMessage => $"{DemoConstants.Hello}{Input}!  {GetCurrentMethod().MethodSignature()}";
+        private string ExpressionBodiedProperyMessage => $"{Hello}{Input}!  {GetCurrentMethod().MethodSignature()}";
 
         #endregion Properties
 
@@ -47,9 +47,9 @@ namespace January_2017_GCDNUG_Demo.Demos
         {
             var sb = new StringBuilder();
 
-            sb.Append($"OLD WAY{DemoConstants.DoubleSpace}");
-            sb.Append($"{GetOldSchoolSingleLineMethodMessage()}{DemoConstants.DoubleSpace}");
-            sb.Append($"{Environment.NewLine}NEW WAY{DemoConstants.DoubleSpace}");
+            sb.AppendLine($"OLD WAY{NewLine}");
+            sb.AppendLine($"{GetOldSchoolSingleLineMethodMessage()}{NewLine}");
+            sb.AppendLine($"{NewLine}NEW WAY{NewLine}");
             sb.Append(GetExpressionBodiedMethodMessage());
 
             return sb.ToString();
@@ -62,11 +62,11 @@ namespace January_2017_GCDNUG_Demo.Demos
         // OLD SINGLE LINE
         private string GetOldSchoolSingleLineMethodMessage()
         {
-            return $"{GetCurrentMethod().MethodSignature()}{Environment.NewLine}{DemoConstants.Hello}{Input}!";
+            return $"{GetCurrentMethod().MethodSignature()}{NewLine}{Hello}{Input}!";
         }
 
         // NEW HOTNESS
-        private string GetExpressionBodiedMethodMessage() => $"{GetCurrentMethod().MethodSignature()}{Environment.NewLine}{DemoConstants.Hello}{Input}!";
+        private string GetExpressionBodiedMethodMessage() => $"{GetCurrentMethod().MethodSignature()}{NewLine}{Hello}{Input}!";
 
         #endregion Private Methods
     }

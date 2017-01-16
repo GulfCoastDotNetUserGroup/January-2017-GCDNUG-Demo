@@ -77,6 +77,34 @@ namespace January_2017_GCDNUG_Demo
             GetMessage(checkedRadioButton);
         }
 
+        private void SetLanguageImage(Control checkedRadioButton)
+        {
+            bool isVersion6;
+            switch (checkedRadioButton.Name)
+            {               
+                case OutVariablesRadioButton:
+                    isVersion6 = false;
+                    break;
+                case PatternMatchingRadioButton:
+                    isVersion6 = false;
+                    break;
+                case TuplesRadioButton:
+                    isVersion6 = false;
+                    break;
+                case DeconstructionRadioButton:
+                    isVersion6 = false;
+                    break;
+                case LocalFunctionsRadioButton:
+                    isVersion6 = false;
+                    break;
+                default:
+                    isVersion6 = true;
+                    break;
+            }
+            languageVersionPictureBox.Visible = isVersion6;
+            languageVersionPictureBox2.Visible = !isVersion6;
+        }
+
         #region Events
 
         private void GetGreetingButton_Click(object sender, EventArgs e)
@@ -87,6 +115,15 @@ namespace January_2017_GCDNUG_Demo
         private void Stuff_Changed(object sender, EventArgs e)
         {
             messageTextBox.Text = string.Empty;
+
+            RadioButton checkedRadioButton = demosGroupBox.Controls.OfType<RadioButton>().FirstOrDefault(r => r.Checked);
+
+            if (checkedRadioButton == null)
+            {
+                return;
+            }
+
+            SetLanguageImage(checkedRadioButton);
         }
 
         private void nameTextBox_KeyDown(object sender, KeyEventArgs e)

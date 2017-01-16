@@ -4,6 +4,7 @@ using January_2017_GCDNUG_Demo.Helpers;
 using January_2017_GCDNUG_Demo.Misc;
 // Static using
 using static System.Reflection.MethodBase;
+using static System.Environment;
 
 
 namespace January_2017_GCDNUG_Demo.Demos
@@ -25,9 +26,9 @@ namespace January_2017_GCDNUG_Demo.Demos
         {
             var sb = new StringBuilder();
 
-            sb.Append($"{GreetingWithConcatination()}{DemoConstants.DoubleSpace}");
+            sb.AppendLine($"{GreetingWithConcatination()}{NewLine}");
 
-            sb.Append($"{GreetingWithStringFormat()}{DemoConstants.DoubleSpace}");
+            sb.AppendLine($"{GreetingWithStringFormat()}{NewLine}");
 
             sb.Append(GreetingWithStringInterpolation());
 
@@ -41,20 +42,20 @@ namespace January_2017_GCDNUG_Demo.Demos
         // With '+' operator
         private string GreetingWithConcatination()
         {
-            return GetCurrentMethod().MethodSignature() + Environment.NewLine + DemoConstants.Hello + Input + "!";
+            return GetCurrentMethod().MethodSignature() + NewLine + DemoConstants.Hello + Input + "!";
         }
 
         // With string.Format()
         private string GreetingWithStringFormat()
         {
             return string.Format("{0}{1}{2}{3}!",
-                GetCurrentMethod().MethodSignature(), Environment.NewLine, DemoConstants.Hello,  Input);
+                GetCurrentMethod().MethodSignature(), NewLine, DemoConstants.Hello,  Input);
         }
 
         // With string interpolation
         private string GreetingWithStringInterpolation()
         {
-            return $"{GetCurrentMethod().MethodSignature()}{Environment.NewLine}{DemoConstants.Hello}{Input}!";
+            return $"{GetCurrentMethod().MethodSignature()}{NewLine}{DemoConstants.Hello}{Input}!";
         }
 
         #endregion Private Methods
