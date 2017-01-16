@@ -5,6 +5,7 @@ using January_2017_GCDNUG_Demo.Misc;
 // Static using
 using static System.Reflection.MethodBase;
 using static System.Environment;
+using static January_2017_GCDNUG_Demo.Misc.DemoConstants;
 
 
 namespace January_2017_GCDNUG_Demo.Demos
@@ -42,20 +43,20 @@ namespace January_2017_GCDNUG_Demo.Demos
         // With '+' operator
         private string GreetingWithConcatination()
         {
-            return GetCurrentMethod().MethodSignature() + NewLine + DemoConstants.Hello + Input + "!";
+            return GetCurrentMethod().MethodSignature() + NewLine + Hello + Input + "!";
         }
 
         // With string.Format()
         private string GreetingWithStringFormat()
         {
             return string.Format("{0}{1}{2}{3}!",
-                GetCurrentMethod().MethodSignature(), NewLine, DemoConstants.Hello,  Input);
+                GetCurrentMethod().MethodSignature(), NewLine, Hello,  Input);
         }
 
         // With string interpolation
         private string GreetingWithStringInterpolation()
         {
-            return $"{GetCurrentMethod().MethodSignature()}{NewLine}{DemoConstants.Hello}{Input}!";
+            return $"{GetCurrentMethod().MethodSignature()}{NewLine}{Hello}{Input}!";
         }
 
         #endregion Private Methods

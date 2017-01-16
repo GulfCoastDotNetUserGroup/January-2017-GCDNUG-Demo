@@ -1,4 +1,5 @@
-﻿using January_2017_GCDNUG_Demo.Helpers;
+﻿using System.Collections.Generic;
+using January_2017_GCDNUG_Demo.Helpers;
 using January_2017_GCDNUG_Demo.Misc;
 using System.Text;
 using static System.Reflection.MethodBase;
@@ -39,55 +40,64 @@ namespace January_2017_GCDNUG_Demo.Demos
         private string GetMessageWithOldOutVariables()
         {
             string firstName, middleName, lastName;
-            ProcessUserInput(Input.Split(' '), out firstName, out middleName, out lastName);
+            ProcessUserInput(Input, out firstName, out middleName, out lastName);
 
-            UserInfo userInfo = new UserInfo(firstName, middleName, lastName);
+            var userInfo = new UserInfo(firstName, middleName, lastName);
 
             return $"{GetCurrentMethod().MethodSignature()}{NewLine}{BuildMessage(userInfo)}";
         }
 
         private string GetMessageWithNewOutVariables()
         {
-            ProcessUserInput(Input.Split(' '), out string firstName, out string middleName, out string lastName);
+            ProcessUserInput(Input, out string firstName, out string middleName, out string lastName);
 
-            UserInfo userInfo = new UserInfo(firstName, middleName, lastName);
+            var userInfo = new UserInfo(firstName, middleName, lastName);
 
             return $"{GetCurrentMethod().MethodSignature()}{NewLine}{BuildMessage(userInfo)}";
         }
 
-        private string BuildMessage(UserInfo userInfo)
+        private static string BuildMessage(UserInfo userInfo)
         {
             var sb = new StringBuilder();
 
-            sb.AppendLine($"First Name: {userInfo.UserFirstName}");
+            if (!string.IsNullOrEmpty(userInfo.UserFirstName))
+            {
+                sb.AppendLine($"First Name: {userInfo.UserFirstName}");
 
-            if (!string.IsNullOrEmpty(userInfo.UserMiddleName))
-            {
-                sb.AppendLine($"Middle Name: {userInfo.UserMiddleName}");
+                if (!string.IsNullOrEmpty(userInfo.UserMiddleName))
+                {
+                    sb.AppendLine($"Middle Name: {userInfo.UserMiddleName}");
+                }
+                if (!string.IsNullOrEmpty(userInfo.UserLastName))
+                {
+                    sb.Append($"Last Name: {userInfo.UserLastName}");
+                }
             }
-            if (!string.IsNullOrEmpty(userInfo.UserLastName))
+            else
             {
-                sb.Append($"Last Name: {userInfo.UserLastName}");
-            }          
+                sb.Append("You need to enter your name dummy!");
+            }      
 
             return sb.ToString();
         }
 
-        private void ProcessUserInput(string[] input, out string firstName, out string middleName, out string lastName)
+        private static void ProcessUserInput(string i, out string firstName, out string middleName, out string lastName)
         {
-            firstName = input?[0] ?? string.Empty;
-            middleName = input != null
-                ? input.Length >= 3
-                    ? input[1]
-                    : string.Empty
-                : string.Empty;
+            string[] input = i.Split(' ');
+
+            firstName = input?[0];
+
+            middleName = input?.Length >= 3
+                ? input[1]
+                : null;
+
             lastName = input != null
                 ? input.Length == 2 
                     ? input[1]
                     : input.Length == 1 
-                        ? string.Empty 
+                        ? null 
                         : input[input.Length - 1]
-                : string.Empty; 
+                : null; 
         }
 
         #endregion Private Methods     

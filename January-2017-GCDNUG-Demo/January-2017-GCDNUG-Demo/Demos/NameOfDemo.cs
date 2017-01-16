@@ -51,6 +51,10 @@ namespace January_2017_GCDNUG_Demo.Demos
             return $"{GetCurrentMethod().MethodSignature()}{NewLine}{GetMessageFromDictionary(userPropertyDictionary)}";
         }
 
+        /// <summary>
+        /// Two birds with one stone here. Shows off 'nameof' as well as new Dictionary initializer
+        /// </summary>
+        /// <returns></returns>
         private string GetUserDetailsWithNameOf()
         {
             // New dictionary initializer
@@ -65,7 +69,7 @@ namespace January_2017_GCDNUG_Demo.Demos
             return $"{GetCurrentMethod().MethodSignature()}{NewLine}{GetMessageFromDictionary(userPropertyDictionary)}";
         }
 
-        private string GetMessageFromDictionary(Dictionary<string, string> dict)
+        private static string GetMessageFromDictionary(Dictionary<string, string> dict)
         {
             var sb = new StringBuilder();
 
