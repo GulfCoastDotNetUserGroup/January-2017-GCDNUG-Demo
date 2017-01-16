@@ -42,10 +42,10 @@ namespace January_2017_GCDNUG_Demo.Demos
             if (string.IsNullOrEmpty(input)) throw new DotNetUserGroupException();
 
             return toUpper 
-                ? Reverse(input).reversedUpper
+                ? Reverse(input).reversedToUpper
                 : Reverse(input).reversed;
 
-            (string reversed, string reversedUpper) Reverse(string s)
+            (string reversed, string reversedToUpper) Reverse(string s)
             {
                 var charArray = s.ToCharArray();
                 Array.Reverse(charArray);
