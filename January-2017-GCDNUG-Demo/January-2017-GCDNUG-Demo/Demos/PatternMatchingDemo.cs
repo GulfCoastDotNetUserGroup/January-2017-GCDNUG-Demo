@@ -4,6 +4,7 @@ using System.Text;
 using static System.Reflection.MethodBase;
 using static January_2017_GCDNUG_Demo.Misc.DemoConstants;
 using static System.Environment;
+using System.Windows.Forms;
 
 namespace January_2017_GCDNUG_Demo.Demos
 {
@@ -22,9 +23,11 @@ namespace January_2017_GCDNUG_Demo.Demos
 
         #region Constructors
 
-        public PatternMatchingDemo(string input)
+        public PatternMatchingDemo(object obj)
         {
-            Input = input;
+            if (obj is TextBox textBox) Input = textBox.Text;
+            else if (obj is string s) Input = s;
+            else Input = string.Empty;
         }
 
         #endregion Constructors

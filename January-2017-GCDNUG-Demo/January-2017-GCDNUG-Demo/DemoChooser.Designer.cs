@@ -45,15 +45,19 @@
             this.stringInterpolationRadioButton = new System.Windows.Forms.RadioButton();
             this.patternMatchingRadioButton = new System.Windows.Forms.RadioButton();
             this.tuplesRadioButton = new System.Windows.Forms.RadioButton();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.demosGroupBox.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // nameLabel
             // 
             this.nameLabel.AutoSize = true;
+            this.nameLabel.BackColor = System.Drawing.Color.Transparent;
+            this.nameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nameLabel.Location = new System.Drawing.Point(12, 34);
             this.nameLabel.Name = "nameLabel";
-            this.nameLabel.Size = new System.Drawing.Size(31, 13);
+            this.nameLabel.Size = new System.Drawing.Size(34, 15);
             this.nameLabel.TabIndex = 0;
             this.nameLabel.Text = "Input";
             // 
@@ -68,12 +72,13 @@
             // 
             // getGreetingButton
             // 
+            this.getGreetingButton.BackColor = System.Drawing.Color.Azure;
             this.getGreetingButton.Location = new System.Drawing.Point(277, 51);
             this.getGreetingButton.Name = "getGreetingButton";
             this.getGreetingButton.Size = new System.Drawing.Size(108, 23);
             this.getGreetingButton.TabIndex = 2;
             this.getGreetingButton.Text = "DO STUFF";
-            this.getGreetingButton.UseVisualStyleBackColor = true;
+            this.getGreetingButton.UseVisualStyleBackColor = false;
             this.getGreetingButton.Click += new System.EventHandler(this.GetGreetingButton_Click);
             // 
             // messageTextBox
@@ -88,6 +93,7 @@
             // 
             // demosGroupBox
             // 
+            this.demosGroupBox.BackColor = System.Drawing.Color.Transparent;
             this.demosGroupBox.Controls.Add(this.tuplesRadioButton);
             this.demosGroupBox.Controls.Add(this.patternMatchingRadioButton);
             this.demosGroupBox.Controls.Add(this.outVariablesRadioButton);
@@ -99,9 +105,10 @@
             this.demosGroupBox.Controls.Add(this.label1);
             this.demosGroupBox.Controls.Add(this.nullConditionalRadioButton);
             this.demosGroupBox.Controls.Add(this.stringInterpolationRadioButton);
+            this.demosGroupBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.demosGroupBox.Location = new System.Drawing.Point(801, 51);
             this.demosGroupBox.Name = "demosGroupBox";
-            this.demosGroupBox.Size = new System.Drawing.Size(208, 375);
+            this.demosGroupBox.Size = new System.Drawing.Size(223, 375);
             this.demosGroupBox.TabIndex = 4;
             this.demosGroupBox.TabStop = false;
             this.demosGroupBox.Text = "Language Features";
@@ -111,7 +118,7 @@
             this.outVariablesRadioButton.AutoSize = true;
             this.outVariablesRadioButton.Location = new System.Drawing.Point(10, 212);
             this.outVariablesRadioButton.Name = "outVariablesRadioButton";
-            this.outVariablesRadioButton.Size = new System.Drawing.Size(88, 17);
+            this.outVariablesRadioButton.Size = new System.Drawing.Size(98, 19);
             this.outVariablesRadioButton.TabIndex = 8;
             this.outVariablesRadioButton.TabStop = true;
             this.outVariablesRadioButton.Text = "Out Variables";
@@ -133,7 +140,7 @@
             this.awaitRadioButton.AutoSize = true;
             this.awaitRadioButton.Location = new System.Drawing.Point(10, 154);
             this.awaitRadioButton.Name = "awaitRadioButton";
-            this.awaitRadioButton.Size = new System.Drawing.Size(126, 17);
+            this.awaitRadioButton.Size = new System.Drawing.Size(140, 19);
             this.awaitRadioButton.TabIndex = 6;
             this.awaitRadioButton.TabStop = true;
             this.awaitRadioButton.Text = "\'await\' in Catch Block";
@@ -145,7 +152,7 @@
             this.exceptionFiltersRadioButton.AutoSize = true;
             this.exceptionFiltersRadioButton.Location = new System.Drawing.Point(10, 131);
             this.exceptionFiltersRadioButton.Name = "exceptionFiltersRadioButton";
-            this.exceptionFiltersRadioButton.Size = new System.Drawing.Size(102, 17);
+            this.exceptionFiltersRadioButton.Size = new System.Drawing.Size(115, 19);
             this.exceptionFiltersRadioButton.TabIndex = 5;
             this.exceptionFiltersRadioButton.TabStop = true;
             this.exceptionFiltersRadioButton.Text = "Exception Filters";
@@ -157,7 +164,7 @@
             this.nameofRadioButton.AutoSize = true;
             this.nameofRadioButton.Location = new System.Drawing.Point(10, 108);
             this.nameofRadioButton.Name = "nameofRadioButton";
-            this.nameofRadioButton.Size = new System.Drawing.Size(178, 17);
+            this.nameofRadioButton.Size = new System.Drawing.Size(206, 19);
             this.nameofRadioButton.TabIndex = 4;
             this.nameofRadioButton.TabStop = true;
             this.nameofRadioButton.Text = "\'nameof\' and Dictionary Initializer";
@@ -169,7 +176,7 @@
             this.expressionBodiedMembersRadioButton.AutoSize = true;
             this.expressionBodiedMembersRadioButton.Location = new System.Drawing.Point(10, 84);
             this.expressionBodiedMembersRadioButton.Name = "expressionBodiedMembersRadioButton";
-            this.expressionBodiedMembersRadioButton.Size = new System.Drawing.Size(157, 17);
+            this.expressionBodiedMembersRadioButton.Size = new System.Drawing.Size(184, 19);
             this.expressionBodiedMembersRadioButton.TabIndex = 3;
             this.expressionBodiedMembersRadioButton.TabStop = true;
             this.expressionBodiedMembersRadioButton.Text = "Expression-bodied Members";
@@ -191,7 +198,7 @@
             this.nullConditionalRadioButton.AutoSize = true;
             this.nullConditionalRadioButton.Location = new System.Drawing.Point(10, 61);
             this.nullConditionalRadioButton.Name = "nullConditionalRadioButton";
-            this.nullConditionalRadioButton.Size = new System.Drawing.Size(103, 17);
+            this.nullConditionalRadioButton.Size = new System.Drawing.Size(117, 19);
             this.nullConditionalRadioButton.TabIndex = 1;
             this.nullConditionalRadioButton.Text = "Null Propagation";
             this.nullConditionalRadioButton.UseVisualStyleBackColor = true;
@@ -203,7 +210,7 @@
             this.stringInterpolationRadioButton.Checked = true;
             this.stringInterpolationRadioButton.Location = new System.Drawing.Point(10, 38);
             this.stringInterpolationRadioButton.Name = "stringInterpolationRadioButton";
-            this.stringInterpolationRadioButton.Size = new System.Drawing.Size(113, 17);
+            this.stringInterpolationRadioButton.Size = new System.Drawing.Size(128, 19);
             this.stringInterpolationRadioButton.TabIndex = 0;
             this.stringInterpolationRadioButton.TabStop = true;
             this.stringInterpolationRadioButton.Text = "String Interpolation";
@@ -215,7 +222,7 @@
             this.patternMatchingRadioButton.AutoSize = true;
             this.patternMatchingRadioButton.Location = new System.Drawing.Point(10, 236);
             this.patternMatchingRadioButton.Name = "patternMatchingRadioButton";
-            this.patternMatchingRadioButton.Size = new System.Drawing.Size(106, 17);
+            this.patternMatchingRadioButton.Size = new System.Drawing.Size(118, 19);
             this.patternMatchingRadioButton.TabIndex = 9;
             this.patternMatchingRadioButton.TabStop = true;
             this.patternMatchingRadioButton.Text = "Pattern Matching";
@@ -227,17 +234,31 @@
             this.tuplesRadioButton.AutoSize = true;
             this.tuplesRadioButton.Location = new System.Drawing.Point(10, 260);
             this.tuplesRadioButton.Name = "tuplesRadioButton";
-            this.tuplesRadioButton.Size = new System.Drawing.Size(57, 17);
+            this.tuplesRadioButton.Size = new System.Drawing.Size(62, 19);
             this.tuplesRadioButton.TabIndex = 10;
             this.tuplesRadioButton.TabStop = true;
             this.tuplesRadioButton.Text = "Tuples";
             this.tuplesRadioButton.UseVisualStyleBackColor = true;
+            this.tuplesRadioButton.Click += new System.EventHandler(this.Stuff_Changed);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox1.Location = new System.Drawing.Point(638, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(135, 86);
+            this.pictureBox1.TabIndex = 5;
+            this.pictureBox1.TabStop = false;
             // 
             // DemoChooserForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1021, 438);
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.ClientSize = new System.Drawing.Size(1036, 438);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.demosGroupBox);
             this.Controls.Add(this.messageTextBox);
             this.Controls.Add(this.getGreetingButton);
@@ -248,6 +269,7 @@
             this.Text = "January 2017 Gulf Coast .NET User Group Demo";
             this.demosGroupBox.ResumeLayout(false);
             this.demosGroupBox.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -271,6 +293,7 @@
         private System.Windows.Forms.RadioButton outVariablesRadioButton;
         private System.Windows.Forms.RadioButton patternMatchingRadioButton;
         private System.Windows.Forms.RadioButton tuplesRadioButton;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
 

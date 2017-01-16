@@ -44,9 +44,10 @@ namespace January_2017_GCDNUG_Demo
                     messageBuilders.Add(new OutVariablesDemo(nameTextBox.Text));
                     break;
                 case PatternMatchingRadioButton:
-                    messageBuilders.Add(new PatternMatchingDemo(nameTextBox.Text));
+                    messageBuilders.Add(new PatternMatchingDemo(nameTextBox));
                     break;
                 case TuplesRadioButton:
+                    messageBuilders.Add(new TuplesDemo(nameTextBox.Text));
                     break;
             }
 
