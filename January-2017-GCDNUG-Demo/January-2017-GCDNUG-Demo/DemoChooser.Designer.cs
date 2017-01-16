@@ -48,6 +48,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.languageVersionPictureBox = new System.Windows.Forms.PictureBox();
             this.languageVersionPictureBox2 = new System.Windows.Forms.PictureBox();
+            this.refReturnsAndLocalsRadioButton = new System.Windows.Forms.RadioButton();
             this.demosGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.languageVersionPictureBox)).BeginInit();
@@ -88,6 +89,7 @@
             // messageTextBox
             // 
             this.messageTextBox.BackColor = System.Drawing.SystemColors.Control;
+            this.messageTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.messageTextBox.Location = new System.Drawing.Point(12, 112);
             this.messageTextBox.Multiline = true;
             this.messageTextBox.Name = "messageTextBox";
@@ -99,6 +101,7 @@
             // demosGroupBox
             // 
             this.demosGroupBox.BackColor = System.Drawing.Color.Transparent;
+            this.demosGroupBox.Controls.Add(this.refReturnsAndLocalsRadioButton);
             this.demosGroupBox.Controls.Add(this.localFunctionsRadioButton);
             this.demosGroupBox.Controls.Add(this.deconstructionRadioButton);
             this.demosGroupBox.Controls.Add(this.tuplesRadioButton);
@@ -121,18 +124,19 @@
             // localFunctionsRadioButton
             // 
             this.localFunctionsRadioButton.AutoSize = true;
-            this.localFunctionsRadioButton.Location = new System.Drawing.Point(16, 283);
+            this.localFunctionsRadioButton.Location = new System.Drawing.Point(17, 273);
             this.localFunctionsRadioButton.Name = "localFunctionsRadioButton";
             this.localFunctionsRadioButton.Size = new System.Drawing.Size(111, 19);
             this.localFunctionsRadioButton.TabIndex = 12;
             this.localFunctionsRadioButton.TabStop = true;
             this.localFunctionsRadioButton.Text = "Local Functions";
             this.localFunctionsRadioButton.UseVisualStyleBackColor = true;
+            this.localFunctionsRadioButton.Click += new System.EventHandler(this.Stuff_Changed);
             // 
             // deconstructionRadioButton
             // 
             this.deconstructionRadioButton.AutoSize = true;
-            this.deconstructionRadioButton.Location = new System.Drawing.Point(16, 257);
+            this.deconstructionRadioButton.Location = new System.Drawing.Point(17, 247);
             this.deconstructionRadioButton.Name = "deconstructionRadioButton";
             this.deconstructionRadioButton.Size = new System.Drawing.Size(107, 19);
             this.deconstructionRadioButton.TabIndex = 11;
@@ -144,7 +148,7 @@
             // tuplesRadioButton
             // 
             this.tuplesRadioButton.AutoSize = true;
-            this.tuplesRadioButton.Location = new System.Drawing.Point(16, 231);
+            this.tuplesRadioButton.Location = new System.Drawing.Point(17, 221);
             this.tuplesRadioButton.Name = "tuplesRadioButton";
             this.tuplesRadioButton.Size = new System.Drawing.Size(62, 19);
             this.tuplesRadioButton.TabIndex = 10;
@@ -156,7 +160,7 @@
             // patternMatchingRadioButton
             // 
             this.patternMatchingRadioButton.AutoSize = true;
-            this.patternMatchingRadioButton.Location = new System.Drawing.Point(16, 207);
+            this.patternMatchingRadioButton.Location = new System.Drawing.Point(17, 197);
             this.patternMatchingRadioButton.Name = "patternMatchingRadioButton";
             this.patternMatchingRadioButton.Size = new System.Drawing.Size(118, 19);
             this.patternMatchingRadioButton.TabIndex = 9;
@@ -168,7 +172,7 @@
             // outVariablesRadioButton
             // 
             this.outVariablesRadioButton.AutoSize = true;
-            this.outVariablesRadioButton.Location = new System.Drawing.Point(16, 183);
+            this.outVariablesRadioButton.Location = new System.Drawing.Point(17, 173);
             this.outVariablesRadioButton.Name = "outVariablesRadioButton";
             this.outVariablesRadioButton.Size = new System.Drawing.Size(98, 19);
             this.outVariablesRadioButton.TabIndex = 8;
@@ -180,7 +184,7 @@
             // awaitRadioButton
             // 
             this.awaitRadioButton.AutoSize = true;
-            this.awaitRadioButton.Location = new System.Drawing.Point(16, 158);
+            this.awaitRadioButton.Location = new System.Drawing.Point(17, 148);
             this.awaitRadioButton.Name = "awaitRadioButton";
             this.awaitRadioButton.Size = new System.Drawing.Size(140, 19);
             this.awaitRadioButton.TabIndex = 6;
@@ -192,7 +196,7 @@
             // exceptionFiltersRadioButton
             // 
             this.exceptionFiltersRadioButton.AutoSize = true;
-            this.exceptionFiltersRadioButton.Location = new System.Drawing.Point(16, 135);
+            this.exceptionFiltersRadioButton.Location = new System.Drawing.Point(17, 125);
             this.exceptionFiltersRadioButton.Name = "exceptionFiltersRadioButton";
             this.exceptionFiltersRadioButton.Size = new System.Drawing.Size(115, 19);
             this.exceptionFiltersRadioButton.TabIndex = 5;
@@ -204,7 +208,7 @@
             // nameofRadioButton
             // 
             this.nameofRadioButton.AutoSize = true;
-            this.nameofRadioButton.Location = new System.Drawing.Point(16, 112);
+            this.nameofRadioButton.Location = new System.Drawing.Point(17, 102);
             this.nameofRadioButton.Name = "nameofRadioButton";
             this.nameofRadioButton.Size = new System.Drawing.Size(206, 19);
             this.nameofRadioButton.TabIndex = 4;
@@ -216,7 +220,7 @@
             // expressionBodiedMembersRadioButton
             // 
             this.expressionBodiedMembersRadioButton.AutoSize = true;
-            this.expressionBodiedMembersRadioButton.Location = new System.Drawing.Point(16, 88);
+            this.expressionBodiedMembersRadioButton.Location = new System.Drawing.Point(17, 78);
             this.expressionBodiedMembersRadioButton.Name = "expressionBodiedMembersRadioButton";
             this.expressionBodiedMembersRadioButton.Size = new System.Drawing.Size(184, 19);
             this.expressionBodiedMembersRadioButton.TabIndex = 3;
@@ -228,7 +232,7 @@
             // nullConditionalRadioButton
             // 
             this.nullConditionalRadioButton.AutoSize = true;
-            this.nullConditionalRadioButton.Location = new System.Drawing.Point(16, 65);
+            this.nullConditionalRadioButton.Location = new System.Drawing.Point(17, 55);
             this.nullConditionalRadioButton.Name = "nullConditionalRadioButton";
             this.nullConditionalRadioButton.Size = new System.Drawing.Size(117, 19);
             this.nullConditionalRadioButton.TabIndex = 1;
@@ -240,7 +244,7 @@
             // 
             this.stringInterpolationRadioButton.AutoSize = true;
             this.stringInterpolationRadioButton.Checked = true;
-            this.stringInterpolationRadioButton.Location = new System.Drawing.Point(16, 42);
+            this.stringInterpolationRadioButton.Location = new System.Drawing.Point(17, 32);
             this.stringInterpolationRadioButton.Name = "stringInterpolationRadioButton";
             this.stringInterpolationRadioButton.Size = new System.Drawing.Size(128, 19);
             this.stringInterpolationRadioButton.TabIndex = 0;
@@ -280,6 +284,18 @@
             this.languageVersionPictureBox2.TabIndex = 7;
             this.languageVersionPictureBox2.TabStop = false;
             this.languageVersionPictureBox2.Visible = false;
+            // 
+            // refReturnsAndLocalsRadioButton
+            // 
+            this.refReturnsAndLocalsRadioButton.AutoSize = true;
+            this.refReturnsAndLocalsRadioButton.Location = new System.Drawing.Point(17, 298);
+            this.refReturnsAndLocalsRadioButton.Name = "refReturnsAndLocalsRadioButton";
+            this.refReturnsAndLocalsRadioButton.Size = new System.Drawing.Size(153, 19);
+            this.refReturnsAndLocalsRadioButton.TabIndex = 13;
+            this.refReturnsAndLocalsRadioButton.TabStop = true;
+            this.refReturnsAndLocalsRadioButton.Text = "Ref Returns and Locals";
+            this.refReturnsAndLocalsRadioButton.UseVisualStyleBackColor = true;
+            this.refReturnsAndLocalsRadioButton.Click += new System.EventHandler(this.Stuff_Changed);
             // 
             // DemoChooserForm
             // 
@@ -330,6 +346,7 @@
         private System.Windows.Forms.RadioButton localFunctionsRadioButton;
         private System.Windows.Forms.PictureBox languageVersionPictureBox;
         private System.Windows.Forms.PictureBox languageVersionPictureBox2;
+        private System.Windows.Forms.RadioButton refReturnsAndLocalsRadioButton;
     }
 }
 

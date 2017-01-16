@@ -54,6 +54,9 @@ namespace January_2017_GCDNUG_Demo
                 case LocalFunctionsRadioButton:
                     messageBuilders.Add(new LocalFunctionsDemo(nameTextBox.Text));
                     break;
+                case RefReturnsAndLocalsRadioButton:
+                    messageBuilders.Add(new RefReturnsAndLocalsDemo(nameTextBox.Text));
+                    break;
             }
 
             DisplayMessage(messageBuilders);
@@ -97,6 +100,9 @@ namespace January_2017_GCDNUG_Demo
                 case LocalFunctionsRadioButton:
                     isVersion6 = false;
                     break;
+                case RefReturnsAndLocalsRadioButton:
+                    isVersion6 = false;
+                    break;
                 default:
                     isVersion6 = true;
                     break;
@@ -114,7 +120,7 @@ namespace January_2017_GCDNUG_Demo
 
         private void Stuff_Changed(object sender, EventArgs e)
         {
-            messageTextBox.Text = string.Empty;
+            //messageTextBox.Text = string.Empty;
 
             RadioButton checkedRadioButton = demosGroupBox.Controls.OfType<RadioButton>().FirstOrDefault(r => r.Checked);
 

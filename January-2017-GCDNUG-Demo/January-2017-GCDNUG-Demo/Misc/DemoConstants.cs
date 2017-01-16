@@ -36,6 +36,8 @@
 
         public const string LocalFunctionsRadioButton = "localFunctionsRadioButton";
 
+        public const string RefReturnsAndLocalsRadioButton = "refReturnsAndLocalsRadioButton";
+
         #endregion Demo Names
     }
 }

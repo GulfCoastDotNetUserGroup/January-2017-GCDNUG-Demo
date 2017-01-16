@@ -60,6 +60,7 @@
     <Compile Include="Demos\NameOfDemo.cs" />
     <Compile Include="Demos\NullPropagationOperatorDemo.cs" />
     <Compile Include="Demos\OutVariablesDemo.cs" />
+    <Compile Include="Demos\RefReturnsAndLocalsDemo.cs" />
     <Compile Include="Demos\StringInterpolationDemo.cs" />
     <Compile Include="DemoChooser.cs">
       <SubType>Form</SubType>
