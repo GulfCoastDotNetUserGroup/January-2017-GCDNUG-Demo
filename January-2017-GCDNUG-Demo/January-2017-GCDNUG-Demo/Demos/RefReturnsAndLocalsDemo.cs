@@ -35,12 +35,21 @@ namespace January_2017_GCDNUG_Demo.Demos
 
         public override string GetMessageInternal()
         {
+            return BuildMessage();
+        }
+
+        #endregion Public Methods
+
+        #region Private Methods
+
+        private string BuildMessage()
+        {
             string[] inputArray = Input.Split(' ');
             int[] intArray = { 4, 8, 15, 16, 23, 42 };
 
-            var sb = new StringBuilder();         
+            var sb = new StringBuilder();
             sb.AppendLine($"The numbers available to change are {IntArrayToCommaDelimitedString(intArray)}");
-            
+
             if (inputArray.Length == 2)
             {
                 if (int.TryParse(inputArray[0], out int firstNumber) &&
@@ -71,10 +80,6 @@ namespace January_2017_GCDNUG_Demo.Demos
 
             return sb.ToString();
         }
-
-        #endregion Public Methods
-
-        #region Private Methods
 
         private ref int Find(int number, int[] numbers, out bool found)
         {
