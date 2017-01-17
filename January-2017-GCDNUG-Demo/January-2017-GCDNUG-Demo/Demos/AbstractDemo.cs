@@ -3,7 +3,7 @@ using January_2017_GCDNUG_Demo.Interfaces;
 
 namespace January_2017_GCDNUG_Demo.Demos
 {
-    public abstract class AbstractDemo : IMessageBuilder
+    public abstract class AbstractDemo : IDemo
     {
         public string Input { get; set; }
         public string Message { get; set; }

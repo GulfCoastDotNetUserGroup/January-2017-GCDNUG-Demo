@@ -17,52 +17,53 @@ namespace January_2017_GCDNUG_Demo
 
         private void GetMessage(Control checkedRadioButton)
         {
-            var messageBuilders = new List<IMessageBuilder>();
+            IDemo demo = null;
 
             switch (checkedRadioButton.Name)
             {
                 case StringInterpolationRadioButton:
-                    messageBuilders.Add(new StringInterpolationDemo(nameTextBox.Text));
+                    demo = new StringInterpolationDemo(nameTextBox.Text);
                     break;
                 case NullConditionalRadioButton:
-                    messageBuilders.Add(new NullPropagationOperatorDemo(nameTextBox.Text));
+                    demo = new NullPropagationOperatorDemo(nameTextBox.Text);
                     break;
                 case ExpressionBodiedMembersRadioButton:
-                    messageBuilders.Add(new ExpressionBodiedMembersDemo(nameTextBox.Text));
+                    demo = new ExpressionBodiedMembersDemo(nameTextBox.Text);
                     break;
                 case NameofRadioButton:
-                    messageBuilders.Add(new NameOfDemo(nameTextBox.Text));
+                    demo = new NameOfDemo(nameTextBox.Text);
                     break;
                 case ExceptionFiltersRadioButton:
-                    messageBuilders.Add(new ExceptionFiltersDemo(nameTextBox.Text));
+                    demo = new ExceptionFiltersDemo(nameTextBox.Text);
                     break;
                 case AwaitRadioButton:
-                    messageTextBox.Text = new AwaitInCatchBlockDemo(nameTextBox.Text.ToLower() == "yes").GetMessage();
-                    return;
+                    demo = new AwaitInCatchBlockDemo(nameTextBox.Text.ToLower() == "yes");
+                    break;
                 case OutVariablesRadioButton:
-                    messageBuilders.Add(new OutVariablesDemo(nameTextBox.Text));
+                    demo = new OutVariablesDemo(nameTextBox.Text);
                     break;
                 case PatternMatchingRadioButton:
-                    messageBuilders.Add(new PatternMatchingDemo(nameTextBox));
+                    demo = new PatternMatchingDemo(nameTextBox);
                     break;
                 case TuplesRadioButton:
-                    messageBuilders.Add(new TuplesDemo(nameTextBox.Text));
+                    demo = new TuplesDemo(nameTextBox.Text);
                     break;
                 case DeconstructionRadioButton:
-                    messageBuilders.Add(new DeconstructionDemo(nameTextBox.Text));
+                    demo = new DeconstructionDemo(nameTextBox.Text);
                     break;
                 case LocalFunctionsRadioButton:
-                    messageBuilders.Add(new LocalFunctionsDemo(nameTextBox.Text));
+                    demo = new LocalFunctionsDemo(nameTextBox.Text);
                     break;
                 case RefReturnsAndLocalsRadioButton:
-                    messageBuilders.Add(new RefReturnsAndLocalsDemo(nameTextBox.Text));
+                    demo = new RefReturnsAndLocalsDemo(nameTextBox.Text);
                     break;
             }
 
-            DisplayMessage(messageBuilders);
+            if (demo == null) throw new NotImplementedException(nameof(demo));
+            messageTextBox.Text = demo.GetMessage() ?? OopsMessage;
         }
 
-        private void DisplayMessage(IEnumerable<IMessageBuilder> messageBuilders)
+        private void DisplayMessagesFromDemos(IEnumerable<IDemo> messageBuilders)
         {
             string message = messageBuilders.Aggregate(string.Empty, (current, messageBuilder) => current + (messageBuilder?.GetMessage() ?? string.Empty));
             messageTextBox.Text = message;
@@ -120,7 +121,7 @@ namespace January_2017_GCDNUG_Demo
 
         private void Stuff_Changed(object sender, EventArgs e)
         {
-            //messageTextBox.Text = string.Empty;
+            messageTextBox.Text = string.Empty;
 
             RadioButton checkedRadioButton = demosGroupBox.Controls.OfType<RadioButton>().FirstOrDefault(r => r.Checked);
 

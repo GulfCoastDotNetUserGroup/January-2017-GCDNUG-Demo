@@ -37,7 +37,7 @@ namespace January_2017_GCDNUG_Demo.Demos
 
         #region Private Methods
 
-        private string ReverseString(string input, bool toUpper = false)
+        private static string ReverseString(string input, bool toUpper = false)
         {
             if (string.IsNullOrEmpty(input)) throw new DotNetUserGroupException();
 

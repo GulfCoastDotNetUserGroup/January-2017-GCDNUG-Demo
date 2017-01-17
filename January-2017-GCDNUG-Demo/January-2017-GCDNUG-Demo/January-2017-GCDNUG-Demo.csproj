@@ -71,7 +71,7 @@
     <Compile Include="Demos\TuplesDemo.cs" />
     <Compile Include="Helpers\ExceptionHelper.cs" />
     <Compile Include="Helpers\MethodInfoHelper.cs" />
-    <Compile Include="Interfaces\IMessageBuilder.cs" />
+    <Compile Include="Interfaces\IDemo.cs" />
     <Compile Include="Misc\DemoConstants.cs" />
     <Compile Include="Misc\DotNetUserGroupException.cs" />
     <Compile Include="Misc\Enums.cs" />
