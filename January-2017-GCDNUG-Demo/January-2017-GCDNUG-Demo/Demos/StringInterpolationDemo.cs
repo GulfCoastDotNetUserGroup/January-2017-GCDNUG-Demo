@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Text;
 using January_2017_GCDNUG_Demo.Helpers;
-using January_2017_GCDNUG_Demo.Misc;
 // Static using
 using static System.Reflection.MethodBase;
 using static System.Environment;

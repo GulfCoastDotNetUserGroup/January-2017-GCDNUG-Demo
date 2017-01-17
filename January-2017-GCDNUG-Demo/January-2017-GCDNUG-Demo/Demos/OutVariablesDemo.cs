@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using January_2017_GCDNUG_Demo.Helpers;
+﻿using January_2017_GCDNUG_Demo.Helpers;
 using January_2017_GCDNUG_Demo.Misc;
 using System.Text;
 using static System.Reflection.MethodBase;
