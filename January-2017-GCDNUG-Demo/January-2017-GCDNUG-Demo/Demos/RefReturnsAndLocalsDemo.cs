@@ -90,7 +90,7 @@ namespace January_2017_GCDNUG_Demo.Demos
 
         private ref int Find(int number, int[] numbers, out bool found)
         {
-            if (numbers == null || numbers.Length == 0) throw new DotNetUserGroupException();
+            if (numbers == null || numbers.Length == 0) throw new DotNetUsersGroupException();
 
             for (int i = 0; i < numbers.Length; i++)
             {

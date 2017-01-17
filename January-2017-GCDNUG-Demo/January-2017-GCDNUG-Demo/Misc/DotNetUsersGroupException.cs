@@ -8,8 +8,7 @@ using static January_2017_GCDNUG_Demo.Misc.Enums;
 namespace January_2017_GCDNUG_Demo.Misc
 {
     [Serializable]
-    public class DotNetUserGroupException : Exception
+    public class DotNetUsersGroupException : Exception
     {
-        public ExceptionPanicLevelEnum PanicLevel { get; set; }
     }
 }

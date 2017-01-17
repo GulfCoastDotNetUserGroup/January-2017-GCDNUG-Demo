@@ -73,8 +73,7 @@
     <Compile Include="Helpers\MethodInfoHelper.cs" />
     <Compile Include="Interfaces\IDemo.cs" />
     <Compile Include="Misc\DemoConstants.cs" />
-    <Compile Include="Misc\DotNetUserGroupException.cs" />
-    <Compile Include="Misc\Enums.cs" />
+    <Compile Include="Misc\DotNetUsersGroupException.cs" />
     <Compile Include="Misc\User.cs" />
     <Compile Include="Misc\UserInfo.cs" />
     <Compile Include="Misc\UserInput.cs" />

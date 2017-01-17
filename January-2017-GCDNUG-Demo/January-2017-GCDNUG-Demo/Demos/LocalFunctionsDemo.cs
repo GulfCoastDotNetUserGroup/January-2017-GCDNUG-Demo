@@ -39,7 +39,7 @@ namespace January_2017_GCDNUG_Demo.Demos
 
         private static string ReverseString(string input, bool toUpper = false)
         {
-            if (string.IsNullOrEmpty(input)) throw new DotNetUserGroupException();
+            if (string.IsNullOrEmpty(input)) throw new DotNetUsersGroupException();
 
             return toUpper 
                 ? Reverse(input).reversedToUpper

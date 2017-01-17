@@ -44,9 +44,9 @@ namespace January_2017_GCDNUG_Demo.Demos
         {
             try
             {
-                throw new DotNetUserGroupException();
+                throw new DotNetUsersGroupException();
             }
-            catch (DotNetUserGroupException e)
+            catch (DotNetUsersGroupException e)
             {
                 Message = OopsMessage;
                 LogExceptionLongRunning(e, string.Empty);
@@ -57,9 +57,9 @@ namespace January_2017_GCDNUG_Demo.Demos
         {
             try
             {
-                throw new DotNetUserGroupException();
+                throw new DotNetUsersGroupException();
             }
-            catch (DotNetUserGroupException e)
+            catch (DotNetUsersGroupException e)
             {
                 Message = OopsMessage;
                 await LogExceptionLongRunningAsync(e, string.Empty);

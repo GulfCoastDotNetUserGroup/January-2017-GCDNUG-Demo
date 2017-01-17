@@ -64,13 +64,13 @@ namespace January_2017_GCDNUG_Demo.Demos
             {
                 Message = $"{GetCurrentMethod().MethodSignature()}{NewLine}";
 
-                if (User == null) throw new DotNetUserGroupException();
-                if (string.IsNullOrEmpty(User.Name)) throw new DotNetUserGroupException();
-                if (User.Name.Split(' ').Length < 2) throw new DotNetUserGroupException();
+                if (User == null) throw new DotNetUsersGroupException();
+                if (string.IsNullOrEmpty(User.Name)) throw new DotNetUsersGroupException();
+                if (User.Name.Split(' ').Length < 2) throw new DotNetUsersGroupException();
 
                 Message += $"{Hello}{User.Name}";
             }
-            catch (DotNetUserGroupException e)
+            catch (DotNetUsersGroupException e)
             {
                 LogException(e, "EXCEPTION");
                 Message += OopsMessage;
@@ -83,28 +83,28 @@ namespace January_2017_GCDNUG_Demo.Demos
             {
                 Message = $"{GetCurrentMethod().MethodSignature()}{NewLine}";
 
-                if (User == null) throw new DotNetUserGroupException();
-                if (string.IsNullOrEmpty(User.Name)) throw new DotNetUserGroupException();
-                if (User.Name.Split(' ').Length < 2) throw new DotNetUserGroupException();
+                if (User == null) throw new DotNetUsersGroupException();
+                if (string.IsNullOrEmpty(User.Name)) throw new DotNetUsersGroupException();
+                if (User.Name.Split(' ').Length < 2) throw new DotNetUsersGroupException();
 
                 Message += $"{Hello}{User.Name}";
             }
-            catch (DotNetUserGroupException e) when (User == null)
+            catch (DotNetUsersGroupException e) when (User == null)
             {
                 Message += OopsMessage;
                 WriteToImmediateAttentionLog(e, "Something terrible has happened! This application is doomed!");                              
             }
-            catch (DotNetUserGroupException e) when (User != null && string.IsNullOrEmpty(User.Name))
+            catch (DotNetUsersGroupException e) when (User != null && string.IsNullOrEmpty(User.Name))
             {
                 Message += "Please enter a name if you would like your message processed.";
                 WriteToTicketLog(e, "User did not provide a name");                
             }
-            catch (DotNetUserGroupException e) when (User != null && User.Name.Split(' ').Length < 2)
+            catch (DotNetUsersGroupException e) when (User != null && User.Name.Split(' ').Length < 2)
             {
                 Message += "You have only entered your first name. We cannot process your message correctly without your full name.";
                 WriteToMoreImportantThingsToWorryAboutLog(e, "User only provided first name");               
             }
-            catch (DotNetUserGroupException)
+            catch (DotNetUsersGroupException)
             {
                 Message = "Run and don't look back!";
             }
