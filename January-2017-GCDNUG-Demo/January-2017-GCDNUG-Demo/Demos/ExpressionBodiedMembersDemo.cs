@@ -23,12 +23,12 @@ namespace January_2017_GCDNUG_Demo.Demos
         {
             get
             {
-                return $"{Hello}{Input}!  {GetCurrentMethod().MethodSignature()}";
+                return $"{Hello}{Input}!";
             }
         }
 
         // Expression-bodied Member - single line get only property
-        private string ExpressionBodiedProperyMessage => $"{Hello}{Input}!  {GetCurrentMethod().MethodSignature()}";
+        private string ExpressionBodiedProperyMessage => $"{Hello}{Input}!";
 
         #endregion Properties
 

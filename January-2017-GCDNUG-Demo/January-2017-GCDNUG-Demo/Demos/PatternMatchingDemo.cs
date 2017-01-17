@@ -171,9 +171,9 @@ namespace January_2017_GCDNUG_Demo.Demos
                     return $"Your input of '{d}' was passed in as a double.";
                 case UserInput ui:
                     return $"Your input of '{ui.Input}' was passed in as a UserInput object.";
-            }
-
-            return "I'm not sure what type of object you passed in but it wasn't one I was checking for.";
+                default:
+                    return "I'm not sure what type of object you passed in but it wasn't one I was checking for.";
+            }        
         }
 
         private static string GetValidIntegerMessage(int i)

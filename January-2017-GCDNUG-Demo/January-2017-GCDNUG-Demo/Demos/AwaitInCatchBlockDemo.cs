@@ -1,5 +1,6 @@
 ﻿using January_2017_GCDNUG_Demo.Misc;
 using static January_2017_GCDNUG_Demo.Helpers.ExceptionHelper;
+using static January_2017_GCDNUG_Demo.Misc.DemoConstants;
 
 namespace January_2017_GCDNUG_Demo.Demos
 {
@@ -47,7 +48,7 @@ namespace January_2017_GCDNUG_Demo.Demos
             }
             catch (DotNetUserGroupException e)
             {
-                Message = DemoConstants.OopsMessage;
+                Message = OopsMessage;
                 LogExceptionLongRunning(e, string.Empty);
             }
         }
@@ -60,7 +61,7 @@ namespace January_2017_GCDNUG_Demo.Demos
             }
             catch (DotNetUserGroupException e)
             {
-                Message = DemoConstants.OopsMessage;
+                Message = OopsMessage;
                 await LogExceptionLongRunningAsync(e, string.Empty);
             }
         }
