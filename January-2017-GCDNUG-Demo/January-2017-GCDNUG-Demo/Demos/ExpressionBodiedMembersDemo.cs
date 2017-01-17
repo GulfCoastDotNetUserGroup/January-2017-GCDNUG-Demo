@@ -62,11 +62,11 @@ namespace January_2017_GCDNUG_Demo.Demos
         // OLD SINGLE LINE
         private string GetOldSchoolSingleLineMethodMessage()
         {
-            return $"{GetCurrentMethod().MethodSignature()}{NewLine}{Hello}{Input}!";
+            return $"{GetCurrentMethod().MethodSignature()}{NewLine}Hello, {Input}!";
         }
 
         // NEW HOTNESS
-        private string GetExpressionBodiedMethodMessage() => $"{GetCurrentMethod().MethodSignature()}{NewLine}{Hello}{Input}!";
+        private string GetExpressionBodiedMethodMessage() => $"{GetCurrentMethod().MethodSignature()}{NewLine}Hello, {Input}!";
 
         #endregion Private Methods
     }

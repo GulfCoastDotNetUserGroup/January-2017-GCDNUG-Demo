@@ -54,7 +54,7 @@ namespace January_2017_GCDNUG_Demo.Demos
                 {
                     bool foundNumberToReplace = false;
 
-                    MakeTheMagicHappen(ref intArray, firstNumber, secondNumber, ref foundNumberToReplace);
+                    MakeTheMagicHappen(ref intArray, firstNumber, secondNumber, out foundNumberToReplace);
 
                     if (foundNumberToReplace)
                     {
@@ -79,7 +79,7 @@ namespace January_2017_GCDNUG_Demo.Demos
             return sb.ToString();
         }
 
-        private void MakeTheMagicHappen(ref int[] ia, int numberToReplace, int replacementNumber, ref bool found)
+        private void MakeTheMagicHappen(ref int[] ia, int numberToReplace, int replacementNumber, out bool found)
         {
             ref int place = ref Find(numberToReplace, ia, out found); //aliases firstNumbers's place in the array
             if (found)

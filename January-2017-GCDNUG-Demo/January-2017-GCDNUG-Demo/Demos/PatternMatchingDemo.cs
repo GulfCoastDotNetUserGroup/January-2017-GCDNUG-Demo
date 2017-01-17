@@ -60,7 +60,8 @@ namespace January_2017_GCDNUG_Demo.Demos
 
             sb.AppendLine($"'IS' EXPRESSION THE OLD WAY{NewLine}");
 
-            if (int.TryParse(Input, out int i))
+            int i;
+            if (int.TryParse(Input, out i))
             {
                 sb.AppendLine("Input passed as integer");
                 sb.Append(ProcessMessageWithIsExpressionTheOldWay(i));
@@ -121,6 +122,7 @@ namespace January_2017_GCDNUG_Demo.Demos
             sb.AppendLine(GetCurrentMethod().MethodSignature());
 
             int i;
+
             if (obj is int)
             {
                 i = (int)obj;
