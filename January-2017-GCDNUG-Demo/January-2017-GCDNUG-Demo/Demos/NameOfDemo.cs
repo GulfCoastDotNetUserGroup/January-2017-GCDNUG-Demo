@@ -73,7 +73,7 @@ namespace January_2017_GCDNUG_Demo.Demos
         {
             var sb = new StringBuilder();
 
-            foreach (var pair in dict)
+            foreach (KeyValuePair<string, string> pair in dict)
             {
                 sb.AppendLine($"{pair.Key} = {pair.Value}");
             }

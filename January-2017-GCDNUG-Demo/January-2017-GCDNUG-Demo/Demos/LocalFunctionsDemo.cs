@@ -47,7 +47,7 @@ namespace January_2017_GCDNUG_Demo.Demos
 
             (string reversed, string reversedToUpper) Reverse(string s)
             {
-                var charArray = s.ToCharArray();
+                char[] charArray = s.ToCharArray();
                 Array.Reverse(charArray);
                 return (new string(charArray), new string(charArray).ToUpper());
             } 

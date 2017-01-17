@@ -85,10 +85,10 @@ namespace January_2017_GCDNUG_Demo.Demos
 
         private string AssignTupleToExistingVariablesMessage()
         {
-            var input = "Some pre-existing value";
-            var inputReversed = "Some other pre-existing value";
+            string input = "Some pre-existing value";
+            string inputReversed = "Some other pre-existing value";
             char[] inputAsCharArray = {'s', 't', 'u', 'f', 'f'};
-            var inputLength = 98172;
+            int inputLength = 98172;
 
             (input, inputReversed, inputAsCharArray, inputLength) = SuperAwesomeTuple(Input);
 
@@ -105,12 +105,12 @@ namespace January_2017_GCDNUG_Demo.Demos
 
         private static (string input, string inputReversed, char[] inputAsCharArray, int inputLength) SuperAwesomeTuple(object obj)
         {
-            var input = obj.ToString();
-            var inputAsCharArray = input.ToCharArray();
-            var tca = input.ToCharArray();
+            string input = obj.ToString();
+            char[] inputAsCharArray = input.ToCharArray();
+            char[] tca = input.ToCharArray();
             Array.Reverse(tca);
-            var inputReversed = new string(tca);
-            var inputLength = input.Length;
+            string inputReversed = new string(tca);
+            int inputLength = input.Length;
             return (input, inputReversed, inputAsCharArray, inputLength);
         }
 

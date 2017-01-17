@@ -8,7 +8,7 @@ using static January_2017_GCDNUG_Demo.Misc.DemoConstants;
 
 namespace January_2017_GCDNUG_Demo.Demos
 {
-    class ExceptionFiltersDemo : AbstractDemo
+    public class ExceptionFiltersDemo : AbstractDemo
     {
         #region Properties
 

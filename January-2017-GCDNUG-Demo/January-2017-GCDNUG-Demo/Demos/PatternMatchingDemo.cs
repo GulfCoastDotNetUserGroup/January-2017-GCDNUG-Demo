@@ -159,7 +159,7 @@ namespace January_2017_GCDNUG_Demo.Demos
         /// </summary>
         /// <param name="obj"></param>
         /// <returns></returns>
-        private string ProcessMessageWithPatternsInSwitchStatement(object obj)
+        private static string ProcessMessageWithPatternsInSwitchStatement(object obj)
         {
             switch (obj)
             {

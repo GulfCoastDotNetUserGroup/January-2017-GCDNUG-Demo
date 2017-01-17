@@ -107,7 +107,7 @@ namespace January_2017_GCDNUG_Demo.Demos
             {
                 Input = obj.ToString();
                 InputAsCharArray = Input.ToCharArray();
-                var tca = Input.ToCharArray();
+                char[] tca = Input.ToCharArray();
                 Array.Reverse(tca);
                 InputReversed = new string(tca);
                 InputLength = Input.Length;
@@ -118,7 +118,7 @@ namespace January_2017_GCDNUG_Demo.Demos
         {
             input = obj.ToString();
             inputAsCharArray = input.ToCharArray();
-            var tca = input.ToCharArray();
+            char[] tca = input.ToCharArray();
             Array.Reverse(tca);
             inputReversed = new string(tca);
             inputLength = input.Length;
@@ -126,12 +126,12 @@ namespace January_2017_GCDNUG_Demo.Demos
 
         private static (string input, string inputReversed, char[] inputAsCharArray, int inputLength) NewWayWithTuple(object obj)
         {
-            var input = obj.ToString();
-            var inputAsCharArray = input.ToCharArray();
-            var tca = input.ToCharArray();
+            string input = obj.ToString();
+            char[] inputAsCharArray = input.ToCharArray();
+            char[] tca = input.ToCharArray();
             Array.Reverse(tca);
-            var inputReversed = new string(tca);
-            var inputLength = input.Length;
+            string inputReversed = new string(tca);
+            int inputLength = input.Length;
             return (input, inputReversed, inputAsCharArray, inputLength);
         }
 
