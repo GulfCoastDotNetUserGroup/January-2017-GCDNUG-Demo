@@ -10,13 +10,21 @@ namespace January_2017_GCDNUG_Demo.Demos
     /// <summary>
     /// It is common to want to return more than one value from a method. The options available today are less than optimal:
     ///     1. Out parameters: Use is clunky (even with the improvements described above), and they don’t work with async methods.
-    ///     2. System.Tuple<...> return types: Verbose to use and require an allocation of a tuple object.
+    ///     2. System.Tuple return types: Verbose to use and require an allocation of a tuple object.
     ///     3. Custom-built transport type for every method: A lot of code overhead for a type whose purpose is just to temporarily group a few values
     ///     4. Anonymous types returned through a dynamic return type: High performance overhead and no static type checking.
     /// To do better at this, C# 7.0 adds tuple types and tuple literals:
     /// </summary>
     public class PatternMatchingDemo : AbstractDemo
     {
+        #region Constants
+
+        private const string Ridicule = "You're not very good at this.";
+
+        private const string MakingMeSad = "You are making me sad. How hard is it to type some stuff in a box?";
+
+        #endregion Constants
+
         #region Properties
         #endregion Properties
 
@@ -37,7 +45,7 @@ namespace January_2017_GCDNUG_Demo.Demos
         {
             return !string.IsNullOrEmpty(Input) 
                 ? $"{GetMessageOldWay()}{GetMessageNewWay()}{GetMessagesWithSwitchStatement()}" 
-                : "You are making me sad. How hard is it to type some stuff in a box?";
+                : MakingMeSad;
         }
 
         #endregion Public Methods
@@ -58,7 +66,7 @@ namespace January_2017_GCDNUG_Demo.Demos
                 sb.Append(ProcessMessageWithIsExpressionTheOldWay(i));
             }
 
-            sb.AppendLine($"Input passed as a string");
+            sb.AppendLine("Input passed as a string");
             sb.Append(ProcessMessageWithIsExpressionTheOldWay(Input));
             sb.Append(NewLine);
 
@@ -77,7 +85,7 @@ namespace January_2017_GCDNUG_Demo.Demos
                 sb.Append($"{ProcessMessageWithIsExpressionWithPatterns(i)}");
             }
 
-            sb.AppendLine($"Input passed as a string");
+            sb.AppendLine("Input passed as a string");
             sb.AppendLine(ProcessMessageWithIsExpressionTheOldWay(Input));
 
             return sb.ToString();
@@ -90,17 +98,17 @@ namespace January_2017_GCDNUG_Demo.Demos
             sb.AppendLine($"'SWITCH' STATEMENT WITH PATTERNS{NewLine}");
 
             // Pass as string
-            sb.Append(ProcessMessageWithPatternsInSwitchStatement(Input));
+            sb.AppendLine(ProcessMessageWithPatternsInSwitchStatement(Input));
             
             // Pass as int
-            if (int.TryParse(Input, out int i)) sb.Append(ProcessMessageWithPatternsInSwitchStatement(i));
+            if (int.TryParse(Input, out int i)) sb.AppendLine(ProcessMessageWithPatternsInSwitchStatement(i));
 
             // Pass as double
-            if (double.TryParse(Input, out double d)) sb.Append(ProcessMessageWithPatternsInSwitchStatement(d));
+            if (double.TryParse(Input, out double d)) sb.AppendLine(ProcessMessageWithPatternsInSwitchStatement(d));
 
             // Pass as UserInput object
             var userInput = new UserInput(Input);
-            sb.Append(ProcessMessageWithPatternsInSwitchStatement(userInput));
+            sb.AppendLine(ProcessMessageWithPatternsInSwitchStatement(userInput));
 
             return sb.ToString();
         }
@@ -116,15 +124,15 @@ namespace January_2017_GCDNUG_Demo.Demos
             if (obj is int)
             {
                 i = (int)obj;
-                sb.AppendLine($"You have entered {i} which is a valid integer. {i} squared is {i*i}");
+                sb.AppendLine(GetValidIntegerMessage(i));
             }
             else if (obj is string && int.TryParse(obj.ToString(), out i))
             {
-                sb.AppendLine($"You have entered {i} which is a valid integer. {i} squared is {i*i}");
+                sb.AppendLine(GetValidIntegerMessage(i));
             }
             else
             {
-                sb.AppendLine("You're not very good at this.");
+                sb.AppendLine(Ridicule);
             }
             sb.Append(NewLine);
           
@@ -137,8 +145,8 @@ namespace January_2017_GCDNUG_Demo.Demos
             sb.AppendLine(GetCurrentMethod().MethodSignature());
 
             sb.AppendLine((obj is int i || (obj is string s && int.TryParse(s, out i))) 
-                ? $"You have entered {i} which is a valid integer. {i} squared is {i*i}" 
-                : "You're not very good at this.");
+                ? GetValidIntegerMessage(i)
+                : Ridicule);
 
             sb.Append(NewLine);
 
@@ -156,16 +164,21 @@ namespace January_2017_GCDNUG_Demo.Demos
             switch (obj)
             {
                 case string s:
-                    return $"Your input of '{s}' was passed in as a string.{NewLine}";
+                    return $"Your input of '{s}' was passed in as a string.";
                 case int i:
-                    return $"Your input of '{i}' was passed in as an integer.{NewLine}";
+                    return $"Your input of '{i}' was passed in as an integer.";
                 case double d:
-                    return $"Your input of '{d}' was passed in as a double.{NewLine}";
+                    return $"Your input of '{d}' was passed in as a double.";
                 case UserInput ui:
-                    return $"Your input of '{ui.Input}' was passed in as a UserInput object.{NewLine}";
+                    return $"Your input of '{ui.Input}' was passed in as a UserInput object.";
             }
 
-            return $"I'm not sure what type of object you passed in but it wasn't one I was checking for.{NewLine}";
+            return "I'm not sure what type of object you passed in but it wasn't one I was checking for.";
+        }
+
+        private static string GetValidIntegerMessage(int i)
+        {
+            return $"You have entered {i} which is a valid integer. {i} squared is {i * i}";
         }
 
         #endregion Private Methods

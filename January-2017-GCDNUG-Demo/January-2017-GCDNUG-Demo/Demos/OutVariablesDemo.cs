@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using January_2017_GCDNUG_Demo.Helpers;
 using January_2017_GCDNUG_Demo.Misc;
 using System.Text;
@@ -83,21 +84,25 @@ namespace January_2017_GCDNUG_Demo.Demos
 
         private static void ProcessUserInput(string i, out string firstName, out string middleName, out string lastName)
         {
-            string[] input = i.Split(' ');
+            string[] input = i?.Split(' ') ?? new string[]{};
 
-            firstName = input?[0];
+            firstName = input.Length > 0
+                ? !string.IsNullOrEmpty(input[0])
+                    ? input[0]
+                    : null
+                : null;
 
-            middleName = input?.Length >= 3
+            middleName = input.Length >= 3
                 ? input[1]
                 : null;
 
-            lastName = input != null
-                ? input.Length == 2 
+            lastName = input.Length > 0
+                ? input.Length == 2
                     ? input[1]
-                    : input.Length == 1 
-                        ? null 
+                    : input.Length == 1
+                        ? null
                         : input[input.Length - 1]
-                : null; 
+                : null;
         }
 
         #endregion Private Methods     

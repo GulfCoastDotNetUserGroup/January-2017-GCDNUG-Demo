@@ -94,12 +94,12 @@ namespace January_2017_GCDNUG_Demo.Demos
                 Message += OopsMessage;
                 WriteToImmediateAttentionLog(e, "Something terrible has happened! This application is doomed!");                              
             }
-            catch (DotNetUserGroupException e) when (string.IsNullOrEmpty(User.Name))
+            catch (DotNetUserGroupException e) when (User != null && string.IsNullOrEmpty(User.Name))
             {
                 Message += "Please enter a name if you would like your message processed.";
                 WriteToTicketLog(e, "User did not provide a name");                
             }
-            catch (DotNetUserGroupException e) when (User.Name.Split(' ').Length < 2)
+            catch (DotNetUserGroupException e) when (User != null && User.Name.Split(' ').Length < 2)
             {
                 Message += "You have only entered your first name. We cannot process your message correctly without your full name.";
                 WriteToMoreImportantThingsToWorryAboutLog(e, "User only provided first name");               

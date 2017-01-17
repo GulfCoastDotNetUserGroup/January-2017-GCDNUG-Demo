@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using January_2017_GCDNUG_Demo.Misc;
 
 namespace January_2017_GCDNUG_Demo.Demos
@@ -66,7 +63,7 @@ namespace January_2017_GCDNUG_Demo.Demos
                     else
                     {
                         sb.AppendLine($"Did your mother drop you on you head a lot when you were young? {firstNumber} is not one of the numbers!");
-                        sb.AppendLine($"Do you want to take another crack at this or is it too difficult for you?");
+                        sb.AppendLine("Do you want to take another crack at this or is it too difficult for you?");
                     }
                 }
                 else
