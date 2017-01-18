@@ -34,6 +34,7 @@
             this.getGreetingButton = new System.Windows.Forms.Button();
             this.messageTextBox = new System.Windows.Forms.TextBox();
             this.demosGroupBox = new System.Windows.Forms.GroupBox();
+            this.refReturnsAndLocalsRadioButton = new System.Windows.Forms.RadioButton();
             this.localFunctionsRadioButton = new System.Windows.Forms.RadioButton();
             this.deconstructionRadioButton = new System.Windows.Forms.RadioButton();
             this.tuplesRadioButton = new System.Windows.Forms.RadioButton();
@@ -48,7 +49,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.languageVersionPictureBox = new System.Windows.Forms.PictureBox();
             this.languageVersionPictureBox2 = new System.Windows.Forms.PictureBox();
-            this.refReturnsAndLocalsRadioButton = new System.Windows.Forms.RadioButton();
+            this.label1 = new System.Windows.Forms.Label();
             this.demosGroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.languageVersionPictureBox)).BeginInit();
@@ -119,6 +120,18 @@
             this.demosGroupBox.TabIndex = 4;
             this.demosGroupBox.TabStop = false;
             this.demosGroupBox.Text = "Language Features";
+            // 
+            // refReturnsAndLocalsRadioButton
+            // 
+            this.refReturnsAndLocalsRadioButton.AutoSize = true;
+            this.refReturnsAndLocalsRadioButton.Location = new System.Drawing.Point(17, 298);
+            this.refReturnsAndLocalsRadioButton.Name = "refReturnsAndLocalsRadioButton";
+            this.refReturnsAndLocalsRadioButton.Size = new System.Drawing.Size(153, 19);
+            this.refReturnsAndLocalsRadioButton.TabIndex = 13;
+            this.refReturnsAndLocalsRadioButton.TabStop = true;
+            this.refReturnsAndLocalsRadioButton.Text = "Ref Returns and Locals";
+            this.refReturnsAndLocalsRadioButton.UseVisualStyleBackColor = true;
+            this.refReturnsAndLocalsRadioButton.Click += new System.EventHandler(this.Stuff_Changed);
             // 
             // localFunctionsRadioButton
             // 
@@ -284,17 +297,16 @@
             this.languageVersionPictureBox2.TabStop = false;
             this.languageVersionPictureBox2.Visible = false;
             // 
-            // refReturnsAndLocalsRadioButton
+            // label1
             // 
-            this.refReturnsAndLocalsRadioButton.AutoSize = true;
-            this.refReturnsAndLocalsRadioButton.Location = new System.Drawing.Point(17, 298);
-            this.refReturnsAndLocalsRadioButton.Name = "refReturnsAndLocalsRadioButton";
-            this.refReturnsAndLocalsRadioButton.Size = new System.Drawing.Size(153, 19);
-            this.refReturnsAndLocalsRadioButton.TabIndex = 13;
-            this.refReturnsAndLocalsRadioButton.TabStop = true;
-            this.refReturnsAndLocalsRadioButton.Text = "Ref Returns and Locals";
-            this.refReturnsAndLocalsRadioButton.UseVisualStyleBackColor = true;
-            this.refReturnsAndLocalsRadioButton.Click += new System.EventHandler(this.Stuff_Changed);
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(12, 3);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(486, 18);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "https://github.com/amfuller81/January-2017-GCDNUG-Demo.git";
             // 
             // DemoChooserForm
             // 
@@ -303,6 +315,7 @@
             this.BackColor = System.Drawing.SystemColors.Control;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(1036, 446);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.languageVersionPictureBox2);
             this.Controls.Add(this.languageVersionPictureBox);
             this.Controls.Add(this.pictureBox1);
@@ -346,6 +359,7 @@
         private System.Windows.Forms.PictureBox languageVersionPictureBox;
         private System.Windows.Forms.PictureBox languageVersionPictureBox2;
         private System.Windows.Forms.RadioButton refReturnsAndLocalsRadioButton;
+        private System.Windows.Forms.Label label1;
     }
 }
 
